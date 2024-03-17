@@ -6,9 +6,16 @@ body{
 }
 
 .main{
+    width: 1000px;
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    margin: 150px auto;
+    padding: 10px;
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(26, 26, 26, 0.1),
+    0 0 40px rgba(26, 26, 26, 0.1),
+    0 0 80px rgba(26, 26, 26, 0.1);
+    backdrop-filter: blur(15px);
 }
 .header{
     font-size: 38px;
