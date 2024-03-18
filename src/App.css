@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body{
-    background: repeating-radial-gradient(#95cfc7d0,#004f5890);
+    background: repeating-radial-gradient(#308ba4d0,#11434190);
     font-family: "PT Sans", sans-serif;
+    color: aliceblue;
 }
 
 .main{
     width: 1000px;
     display: flex;
     justify-content: center;
-    margin: 150px auto;
+    flex-direction: column;
+    margin: 50px auto;
     padding: 10px;
     border-radius: 35px;
     box-shadow: 0 0 20px rgba(26, 26, 26, 0.1),
@@ -20,15 +22,37 @@ body{
 .header{
     font-size: 38px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto;
     text-align: center;
-    width: 800px;
+    width: 900px;
+}
+.resume{
+    rotate: 270deg;
+    font-size: 50px;
+    width: 250px;
+    margin: 0;
+    color: rgba(3, 16, 18, 0.772);
 }
 .header img{
     float: left;
-    width: 350px;
-
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+    margin: 0 10px;
+    margin-right: 50px;
 }
 .text{
-    margin: auto;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    border-top: 1px solid rgb(42, 96, 82);
+    border-bottom: 1px solid rgb(42, 96, 82);
+}
+.text p{
+}
+.container{
+    height: 80vh;
+    margin-bottom: 20vh;
 }

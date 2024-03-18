@@ -4,13 +4,15 @@ function App() {
   return (
     <>
       <div className="main">
-        <div className="header">
+        <div className="container header">
+          <p className='resume'>Resume of</p>
           <img src="./images/Hasan-Rahic-PNG.png" alt="" />
           <div className="text">
-            <p className="name">Hasan Rahic</p>
-            <p className="age">20 years old</p>
-            <p className="about">Second-year student at Faculty of Information Technologies</p>
+            <p>Hasan Rahic</p>
           </div>
+        </div>
+        <div className="container about">
+          lasdjfasldf
         </div>
       </div>
     </>
