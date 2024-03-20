@@ -60,6 +60,8 @@ body{
 .container{
     height: 70vh;
     margin-bottom: 20vh;
+    margin: auto;
+    text-align: center;
 }
 .about{
     display: block;
@@ -69,4 +71,20 @@ body{
 .about-text{
     font-size: 25px;
     padding: 15px;
+    margin: auto;
+}
+.education-text{
+    font-size: 25px;
+    padding: 15px;
+    margin: auto;
+}
+.skills-text{
+    font-size: 25px;
+    padding: 15px;
+    margin: auto;
+}
+.languages-text{
+    font-size: 25px;
+    padding: 15px;
+    margin: auto;
 }
