@@ -88,3 +88,25 @@ body{
     padding: 15px;
     margin: auto;
 }
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.btn-links{
+    display: flex;
+    margin: 200px auto;
+}
+.btn-links button{
+    margin: auto 30px;
+    padding: 20px 60px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 0;
+    opacity: 0.9;
+    color: rgba(3, 16, 18, 0.772);
+    cursor: pointer;
+}
+.btn-links button:hover{
+    color: aliceblue;
+    background: #11434190;
+}

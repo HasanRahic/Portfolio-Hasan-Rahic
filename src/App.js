@@ -5,6 +5,8 @@ import { FaGraduationCap } from "react-icons/fa";
 import { FaComputer } from "react-icons/fa6";
 import { FaLanguage } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -123,6 +125,12 @@ function App() {
             </div>
           </div>
         </AnimatedOnScroll>
+          <div className="container buttons" style={fadeInStyles}>
+            <div className="btn-links">
+              <AnimatedOnScroll animationIn="fadeInLeft"><a href="https://github.com/HasanRahic"><button ><FaGithub /> GITHUB</button></a></AnimatedOnScroll>
+              <AnimatedOnScroll animationIn="fadeInRight"><a href="https://www.linkedin.com/in/hasan-rahic-3941b2255/"><button><FaLinkedin /> LINKEDIN</button></a></AnimatedOnScroll>
+            </div>
+          </div>
       </div>
     </>
   );
