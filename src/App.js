@@ -7,6 +7,8 @@ import { FaLanguage } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -127,10 +129,31 @@ function App() {
         </AnimatedOnScroll>
           <div className="container buttons" style={fadeInStyles}>
             <div className="btn-links">
-              <AnimatedOnScroll animationIn="fadeInLeft"><a href="https://github.com/HasanRahic"><button ><FaGithub /> GITHUB</button></a></AnimatedOnScroll>
-              <AnimatedOnScroll animationIn="fadeInRight"><a href="https://www.linkedin.com/in/hasan-rahic-3941b2255/"><button><FaLinkedin /> LINKEDIN</button></a></AnimatedOnScroll>
+              <div className="github">
+                <AnimatedOnScroll animationIn="fadeInLeft">
+                  <p>Discover a collection of my past projects and contributions on GitHub. Click the button below to explore:</p>
+                  <a href="https://github.com/HasanRahic"><button ><FaGithub /> GitHub</button></a>
+                </AnimatedOnScroll>
+              </div>
+              <div className="linkedin">
+                <AnimatedOnScroll animationIn="fadeInRight">
+                  <p>Let's connect on LinkedIn! Explore my professional journey, accomplishments, and interests by clicking the button below:</p>
+                  <a href="https://www.linkedin.com/in/hasan-rahic-3941b2255/"><button><FaLinkedin /> LinkedIn</button></a>
+                </AnimatedOnScroll>
+              </div>
             </div>
           </div>
+          <AnimatedOnScroll animationIn="zoomIn">
+            <div className="container social" style={fadeInStyles}>
+              <div className="socials">
+                <div className="instagram-facebook">
+                  <p>Stay updated with my latest insights, projects, and thoughts by following me on social media. Click the buttons below to connect:</p>
+                  <a href="https://www.instagram.com/hasan.rahic/"><button><FaInstagramSquare style={{opacity:.7}} /> Instagram</button></a>
+                  <a href="https://www.facebook.com/hasan.rahic/"><button><FaFacebook style={{opacity:.7}}/> Facebook</button></a>
+                </div>
+              </div>
+            </div>
+          </AnimatedOnScroll>  
       </div>
     </>
   );
