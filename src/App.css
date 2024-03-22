@@ -149,6 +149,7 @@ body{
     border-bottom: 1px solid rgb(42, 96, 82);
     border-radius: 20px;
     padding: 20px;
+    padding-bottom: 83px;
 }
 .socials p{
     font-size: 18px;
@@ -168,4 +169,16 @@ body{
 .socials button:hover{
     color: aliceblue;
     background: #11434190;
+}
+.instagram{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    float: left;
+}
+.facebook{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    float: right;
 }
