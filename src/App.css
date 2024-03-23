@@ -83,12 +83,14 @@ body{
     font-size: 25px;
     padding: 20px;
     margin: auto;
+    border-bottom: 0;
 }
 .skills-icons{
     display: block;
     margin: auto;
     padding: 20px;
     margin-bottom: 150px;
+    border-top: 0;
 }
 .first-row{
     margin-bottom: 20px;
@@ -128,6 +130,18 @@ body{
     opacity: 0.9;
     color: rgba(3, 16, 18, 0.772);
     cursor: pointer;
+}
+.hobbies-text{
+    font-size: 25px;
+    padding: 20px;
+    margin: auto;
+}
+.hobbies-text img{
+    width: 200px;
+    height: 280px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
 }
 .github{
     margin-bottom: 150px;

@@ -108,7 +108,7 @@ function App() {
                 React JS <b>Experienced</b>
             </div>
           </div>
-          <div className="text skills-icons">
+          <div className="text skills-icons" style={fadeInStyles}>
             <div className="first-row">
               <img src="./images/C++-Logo.wine.png" alt="" style={{width:90, height:55, float:'left'}}/>
               <img src="./images/c-sharp.png" alt="" style={{width:45, height:45}}/>
@@ -116,7 +116,7 @@ function App() {
             </div>
             <div className="second-row">
               <img src="./images/html.png" alt="" style={{width:55, height:55}}/>
-              <img src="./images/css-logo.png" alt="" style={{width:35, height:55, float:'left'}}/>
+              <img src="./images/css-logo.png" alt="" style={{width:35, height:55}}/>
             </div>
             <div className="third-row">
               <img src="./images/javascript.png" alt="" style={{width:65, height:45}}/>
@@ -135,11 +135,13 @@ function App() {
           </div>
         </AnimatedOnScroll>
         <AnimatedOnScroll>
-          <div className="container languages" style={fadeInStyles}>
+          <div className="container hobbies" style={fadeInStyles}>
             <h1><FaClock  /> Hobbies and Interests</h1>
-            <div className="text languages-text">
+            <div className="text hobbies-text">
               <p>My hobby of going to the gym provides me with both physical and mental challenges, stress relief, and
               a sense of community, allowing me to stay fit, energized, and connected with like-minded individuals.</p>
+              <img src="./images/HasoSvlacionica.jpeg" alt="" />
+              <img src="./images/HasoTeretana11.jpeg" alt="" />
             </div>
           </div>
         </AnimatedOnScroll>
