@@ -58,7 +58,7 @@ function App() {
               exploring their capabilities, which
               ultimately led me to pursue studies in
               high school and continue in college.
-              The ever-evolving nature of
+              The <br/>ever-evolving nature of
               technology fascinates me, offering
               endless entertainment and
               opportunities for learning. I am eager
@@ -75,7 +75,7 @@ function App() {
               <div className="text education-text">
                 <h3>Faculty of Information Technologies / Software engineering<br/></h3>
                 <p>I'm currently studying at the Faculty of Information Technologies
-                at the University of Dzemal Bjedic Mostar. I'm currently a secondyear student.</p>
+                at the University of Dzemal Bjedic Mostar. I'm currently a <br/> second-year student.</p>
               </div>
             </div>
         </AnimatedOnScroll>
@@ -89,8 +89,8 @@ function App() {
                   During this time, I acquired fundamental knowledge in
                   programming languages such as C++, C#, Java, as well as
                   proficiency in web development languages including HTML, CSS,
-                  and JavaScript.
-                  Graduated: Yes
+                  and JavaScript.<br/>
+                  Graduated: <b>Yes</b>
                 </p>
               </div>
             </div>
@@ -104,7 +104,23 @@ function App() {
                 Java <b>Reasonably experienced</b><br/><br/>
                 HTML <b>Expert</b><br/><br/>
                 CSS <b>Expert</b><br/><br/>
-                JavaScript <b>Experienced</b><br/></p>
+                JavaScript <b>Experienced</b><br/><br/></p>
+                React JS <b>Experienced</b>
+            </div>
+          </div>
+          <div className="text skills-icons">
+            <div className="first-row">
+              <img src="./images/C++-Logo.wine.png" alt="" style={{width:90, height:55, float:'left'}}/>
+              <img src="./images/c-sharp.png" alt="" style={{width:45, height:45}}/>
+              <img src="./images/java-logo-1.png" alt="" style={{width:45, height:45, float:'right'}}/>
+            </div>
+            <div className="second-row">
+              <img src="./images/html.png" alt="" style={{width:55, height:55}}/>
+              <img src="./images/css-logo.png" alt="" style={{width:35, height:55, float:'left'}}/>
+            </div>
+            <div className="third-row">
+              <img src="./images/javascript.png" alt="" style={{width:65, height:45}}/>
+              <img src="./images/React.png" alt="" style={{width:65, height:50}}/>
             </div>
           </div>
         </AnimatedOnScroll>
@@ -112,9 +128,9 @@ function App() {
           <div className="container languages" style={fadeInStyles}>
             <h1><FaLanguage /> Languages</h1>
             <div className="text languages-text">
-              <p>English <b>Native or bilingual</b><br/><br/>
-              Bosnian <b>Native or bilingual</b><br/><br/>
-              German <b>Good</b></p>
+              <p><img src="./images/UK.png" alt="" style={{width:30}} /> English <b>Native or bilingual</b><br/><br/>
+              <img src="./images/Bosnia.png" alt="" style={{width:30}} /> Bosnian <b>Native or bilingual</b><br/><br/>
+              <img src="./images/German.png" alt="" style={{width:30}} /> German <b>Good</b></p>
             </div>
           </div>
         </AnimatedOnScroll>
