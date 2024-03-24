@@ -125,6 +125,29 @@ function App() {
           </div>
         </AnimatedOnScroll>
         <AnimatedOnScroll>
+          <div className="container conv" style={fadeInStyles}>
+            <h1>Hackathon 2024 BEST Mostar</h1>
+            <div className="text conv-text">
+              Thrilled to have participated in the exhilarating 2024 Best Mostar Hackathon! 
+
+              As a participant, I had the fantastic opportunity to immerse myself in a dynamic atmosphere alongside some of the brightest minds in the industry, all driven by a shared passion for innovation and problem-solving.
+
+              The experience was nothing short of exhilarating! From brainstorming sessions to late-night coding marathons, every moment was filled with excitement and creativity. Collaborating with fellow participants, exchanging ideas, and overcoming challenges together truly made it a memorable journey.
+
+              Not only did I have the chance to showcase my technical skills, but I also honed my ability to think on my feet, adapt to unforeseen circumstances, and work effectively under pressure – all invaluable lessons that will undoubtedly shape my future endeavors.
+              You can find our project on my GitHub. Click the link below to check it out and explore the code.
+            </div>
+          </div>
+          <div className="container conv" style={fadeInStyles}>
+            <div className="text conv-img">
+              <img src="./images/hackathon1.jpeg" alt=""  />
+              <img src="./images/hackathon5.jpeg" alt=""  />
+              <img src="./images/hackathon4.jpeg" alt=""  />
+              <img src="./images/hackathon7.jpeg" alt=""  />
+            </div>
+          </div>
+        </AnimatedOnScroll>
+        <AnimatedOnScroll>
           <div className="container languages" style={fadeInStyles}>
             <h1><FaLanguage /> Languages</h1>
             <div className="text languages-text">

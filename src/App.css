@@ -108,6 +108,25 @@ body{
     margin-right: 35px;
     margin-left: 35px;
 }
+.conv-text{
+    font-size: 20px;
+    padding: 20px;
+    margin: auto;
+    border-bottom: 0;
+}
+.conv-img{
+    border-top: 0;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.conv-img img{
+    display: flex;
+    width: 45%;
+    margin: 5px;
+    border-radius: 20px;
+}
 .languages-text{
     font-size: 25px;
     padding: 20px;
