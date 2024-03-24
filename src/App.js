@@ -9,6 +9,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -182,6 +183,14 @@ function App() {
                   <a href="https://www.linkedin.com/in/hasan-rahic-3941b2255/"><button><FaLinkedin /> LinkedIn</button></a>
                 </AnimatedOnScroll>
               </div>
+              <div className="mail">
+                <AnimatedOnScroll animationIn="fadeInLeft">
+                  <p>Let's Connect and Discuss Opportunities!
+                    Interested in learning more about my experience, discussing potential collaborations, or exploring new opportunities together? Feel free to reach out to me via email! Click the button below to send me a message:
+                    Looking forward to connecting and hearing from you soon!</p>
+                    <a href="mailto:hasanrahic604@gmail.com"><button><FaEnvelope /> Mail</button></a>
+                </AnimatedOnScroll>
+            </div>
             </div>
           </div>
           <div className="container social" style={fadeInStyles}>

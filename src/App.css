@@ -127,6 +127,9 @@ body{
     margin: 5px;
     border-radius: 20px;
 }
+.languages{
+    margin-top: 200px;
+}
 .languages-text{
     font-size: 25px;
     padding: 20px;
@@ -163,7 +166,7 @@ body{
     border-radius: 20px;
 }
 .github{
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     padding: 20px;
     border-top: 1px solid rgb(42, 96, 82);
     border-bottom: 1px solid rgb(42, 96, 82);
@@ -177,11 +180,24 @@ body{
 }
 .linkedin{
     padding: 20px;
+    margin-bottom: 100px;
     border-top: 1px solid rgb(42, 96, 82);
     border-bottom: 1px solid rgb(42, 96, 82);
     border-radius: 20px;
 }
 .linkedin p{
+    font-size: 18px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+.mail{
+    margin-bottom: 50px;
+    padding: 20px;
+    border-top: 1px solid rgb(42, 96, 82);
+    border-bottom: 1px solid rgb(42, 96, 82);
+    border-radius: 20px;
+}
+.mail p{
     font-size: 18px;
     width: 400px;
     margin-bottom: 20px;
@@ -192,7 +208,7 @@ body{
 }
 .social{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 250px;
 }
 .socials{
     width: 700px;
@@ -220,6 +236,7 @@ body{
     border: 0;
     border-radius: 30px;
     cursor: pointer;
+    opacity: 0.9;
 }
 .socials button:hover{
     color: aliceblue;
@@ -230,10 +247,12 @@ body{
     justify-content: center;
     width: 50%;
     float: left;
+    opacity: 0.9;
 }
 .facebook{
     display: flex;
     justify-content: center;
     width: 50%;
     float: right;
+    opacity: 0.9;
 }
