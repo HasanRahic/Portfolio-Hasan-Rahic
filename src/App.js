@@ -126,6 +126,16 @@ function App() {
           </div>
         </AnimatedOnScroll>
         <AnimatedOnScroll>
+          <div className="container education" style={fadeInStyles}>
+            <h1><FaGraduationCap /> Course</h1>
+            <h2>JavaScript - March 2024</h2>
+              <div className="text education-text">
+                <h3>Royal Embassy Of Saudi Arabia - Mostar<br/></h3>
+                <p>In March 2024, I attended a rigorous JavaScript course hosted at the Royal Embassy of Saudi Arabia. Through engaging lectures and practical exercises, I deepened my understanding of JavaScript's core concepts and honed my programming skills. After completing the course and passing the final assessment, I earned a certification, empowering me to apply my expertise in real-world projects with confidence.</p>
+              </div>
+            </div>
+        </AnimatedOnScroll>
+        <AnimatedOnScroll>
           <div className="container conv" style={fadeInStyles}>
             <h1>Hackathon 2024 BEST Mostar</h1>
             <div className="text conv-text">

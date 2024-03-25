@@ -60,7 +60,6 @@ body{
 }
 .container{
     height: 70vh;
-    margin-bottom: 20vh;
     margin: auto;
     text-align: center;
 }
@@ -113,6 +112,7 @@ body{
     padding: 20px;
     margin: auto;
     border-bottom: 0;
+    padding-top: -300;
 }
 .conv-img{
     border-top: 0;
@@ -255,4 +255,10 @@ body{
     width: 50%;
     float: right;
     opacity: 0.9;
+}
+.container{
+    margin-bottom: 150px;
+}
+.social{
+    margin-bottom: 0;
 }
