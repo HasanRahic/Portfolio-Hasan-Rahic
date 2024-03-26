@@ -62,6 +62,7 @@ body{
     height: 70vh;
     margin: auto;
     text-align: center;
+    margin-bottom: 150px;
 }
 .about{
     display: block;
@@ -73,10 +74,20 @@ body{
     padding: 20px;
     margin: auto;    
 }
+.education{
+    margin-bottom: 300px;
+}
 .education-text{
     font-size: 25px;
     padding: 15px;
     margin: auto;
+    margin-bottom: 150px;
+}
+.education-text img{
+    width: 400px;
+}
+.skills{
+    margin-bottom: 0;
 }
 .skills-text{
     font-size: 25px;
@@ -106,6 +117,9 @@ body{
     justify-content: center;
     margin-right: 35px;
     margin-left: 35px;
+}
+.conv{
+    margin-bottom: 0;
 }
 .conv-text{
     font-size: 20px;
@@ -255,9 +269,6 @@ body{
     width: 50%;
     float: right;
     opacity: 0.9;
-}
-.container{
-    margin-bottom: 150px;
 }
 .social{
     margin-bottom: 0;
