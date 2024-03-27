@@ -163,6 +163,7 @@ body{
 .buttons{
     display: flex;
     justify-content: center;
+    height: 110vh;
 }
 .btn-links{
     display: block;
@@ -238,7 +239,7 @@ body{
 .socials{
     width: 700px;
     margin: auto;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 .instagram-facebook{
     border-top: 1px solid rgb(42, 96, 82);
@@ -282,14 +283,21 @@ body{
     opacity: 0.9;
 }
 .container{
-    margin-bottom: 350px;
+    margin-bottom: 400px;
 }
 .social{
     margin-bottom: 0;
+    padding-top: 0;
 }
 .conv{
     margin-bottom: 0;
 }
 .skills{
+    margin-bottom: 0;
+}
+.education{
+    margin-bottom: 450px;
+}
+.buttons{
     margin-bottom: 0;
 }

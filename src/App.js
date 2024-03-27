@@ -10,6 +10,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
+import { FaCalendarCheck } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -91,8 +92,7 @@ function App() {
                 programming languages such as C++, C#, Java, as well as
                 proficiency in web development languages including HTML, CSS,
                 and JavaScript.<br/>
-                Graduated: <b>Yes</b>
-              </p>
+                Graduated: <b>Yes</b></p>
               <img src="./images/srednja.jpg" alt="" style={fadeInStylesImg}/>
             </div>
           </div>
@@ -133,7 +133,7 @@ function App() {
             </div>
           </div>
         <div className="container conv" style={fadeInStyles}>
-          <h1>Hackathon 2024 BEST Mostar</h1>
+          <h1><FaCalendarCheck /> Hackathon 2024 BEST Mostar</h1>
           <div className="text conv-text">
             Thrilled to have participated in the exhilarating 2024 Best Mostar Hackathon! 
             As a participant, I had the fantastic opportunity to immerse myself in a dynamic atmosphere alongside some of the brightest minds in the industry, all driven by a shared passion for innovation and problem-solving.
