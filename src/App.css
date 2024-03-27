@@ -136,14 +136,13 @@ body{
     margin-left: 35px;
 }
 .conv-text{
-    font-size: 20px;
-    padding: 20px;
+    font-size: 18px;
     margin: auto;
     border-bottom: 0;
     padding-top: -300;
 }
 .conv-text p{
-    padding: 20px;
+    padding: 15px;
 }
 .conv-img{
     border-top: 0;
@@ -268,7 +267,6 @@ body{
     border: 0;
     border-radius: 30px;
     cursor: pointer;
-    opacity: 0.9;
     color: rgba(3, 16, 18, 0.772);
 }
 .socials button:hover{
@@ -280,14 +278,12 @@ body{
     justify-content: center;
     width: 50%;
     float: left;
-    opacity: 0.9;
 }
 .facebook{
     display: flex;
     justify-content: center;
     width: 50%;
     float: right;
-    opacity: 0.9;
 }
 .container{
     margin-bottom: 400px;

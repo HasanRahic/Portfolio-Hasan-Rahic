@@ -197,12 +197,12 @@ function App() {
               <p>Stay updated with my latest insights, projects, and thoughts by following me on social media. Click the buttons below to connect:</p>
               <div className="instagram">
                 <AnimatedOnScroll animationIn="fadeInLeft">
-                  <a href="https://www.instagram.com/hasan.rahic/"><button><FaInstagramSquare style={{opacity:.7}} /> Instagram</button></a>
+                  <a href="https://www.instagram.com/hasan.rahic/"><button><FaInstagramSquare /> Instagram</button></a>
                 </AnimatedOnScroll>
               </div>
               <div className="facebook">
                 <AnimatedOnScroll animationIn="fadeInRight">
-                  <a href="https://www.facebook.com/hasan.rahic/"><button><FaFacebook style={{opacity:.7}}/> Facebook</button></a>
+                  <a href="https://www.facebook.com/hasan.rahic/"><button><FaFacebook/> Facebook</button></a>
                 </AnimatedOnScroll>
               </div>
             </div>
