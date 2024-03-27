@@ -266,6 +266,7 @@ body{
     border-radius: 30px;
     cursor: pointer;
     opacity: 0.9;
+    color: rgba(3, 16, 18, 0.772);
 }
 .socials button:hover{
     color: aliceblue;
@@ -296,7 +297,7 @@ body{
     margin-bottom: 0;
 }
 .skills{
-    margin-bottom: 0;
+    margin-bottom: 100px;
 }
 .education{
     margin-bottom: 450px;
