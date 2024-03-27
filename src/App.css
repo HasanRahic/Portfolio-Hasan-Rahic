@@ -150,10 +150,11 @@ body{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 .conv-img img{
     display: flex;
-    width: 45%;
+    width: 180px;
     margin: 5px;
     border-radius: 20px;
 }
