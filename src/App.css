@@ -103,6 +103,9 @@ body{
     border-bottom: 0;
     padding-top: -300;
 }
+.course-text h3{
+    font-size: 1.4rem;
+}
 .skills-text{
     font-size: 25px;
     padding: 20px;

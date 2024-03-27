@@ -50,7 +50,7 @@ function App() {
             <img src="./images/hasoPngInsta.png" alt="" />
           </AnimatedOnScroll>
           <div className="text">
-            <AnimatedOnScroll><p>Hasan Rahic</p></AnimatedOnScroll>
+            <AnimatedOnScroll><p>Hasan Rahić</p></AnimatedOnScroll>
           </div>
         </div>
         <div className="container about" style={fadeInStyles}>
@@ -85,7 +85,7 @@ function App() {
         <div className="container education" style={fadeInStyles}>
           <h2>SEPTEMBER 2018 - JUNE 2022</h2>
           <div className="text education-text">
-            <h3>JU Srednja elektrotehnicka skola / Information Technologies<br/></h3>
+            <h3>JU Srednja elektrotehnička škola / Information Technologies<br/></h3>
               <p>I completed high school in Mostar with a focus on IT, where I
                 gained a solid foundation in the world of information technology.
                 During this time, I acquired fundamental knowledge in
