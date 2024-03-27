@@ -43,7 +43,7 @@ body{
 }
 .header img{
     float: left;
-    width: 350px;
+    width: 450px;
     height: 450px;
     border-radius: 20px;
     margin: 0 10px;
@@ -62,7 +62,7 @@ body{
     height: 70vh;
     margin: auto;
     text-align: center;
-    margin-bottom: 150px;
+    margin-bottom: 350px;
 }
 .about{
     display: block;
@@ -75,19 +75,33 @@ body{
     margin: auto;    
 }
 .education{
-    margin-bottom: 300px;
+    margin-bottom: 350px;
+    height: 80vh;
 }
 .education-text{
     font-size: 25px;
     padding: 15px;
     margin: auto;
-    margin-bottom: 150px;
 }
 .education-text img{
     width: 400px;
 }
-.skills{
-    margin-bottom: 0;
+.course{
+    margin-bottom: 350px;
+    height: 80vh;
+}
+.course-text{
+    padding: 15px;
+}
+.course img{
+    width: 400px;
+}
+.course-text p{
+    font-size: 20px;
+    padding: 20px;
+    margin: auto;
+    border-bottom: 0;
+    padding-top: -300;
 }
 .skills-text{
     font-size: 25px;
@@ -99,7 +113,7 @@ body{
     display: block;
     margin: auto;
     padding: 20px;
-    margin-bottom: 150px;
+    margin-bottom: 350px;
     border-top: 0;
 }
 .first-row{
@@ -117,9 +131,6 @@ body{
     justify-content: center;
     margin-right: 35px;
     margin-left: 35px;
-}
-.conv{
-    margin-bottom: 0;
 }
 .conv-text{
     font-size: 20px;
@@ -142,7 +153,7 @@ body{
     border-radius: 20px;
 }
 .languages{
-    margin-top: 200px;
+    margin-top: 500px;
 }
 .languages-text{
     font-size: 25px;
@@ -270,6 +281,15 @@ body{
     float: right;
     opacity: 0.9;
 }
+.container{
+    margin-bottom: 350px;
+}
 .social{
+    margin-bottom: 0;
+}
+.conv{
+    margin-bottom: 0;
+}
+.skills{
     margin-bottom: 0;
 }

@@ -46,7 +46,7 @@ function App() {
         <p className='resume'>Resume of</p>
         <div className="container header">
           <AnimatedOnScroll>
-            <img src="./images/Hasan-Rahic-PNG.png" alt="" />
+            <img src="./images/hasoPngInsta.png" alt="" />
           </AnimatedOnScroll>
           <div className="text">
             <AnimatedOnScroll><p>Hasan Rahic</p></AnimatedOnScroll>
@@ -123,10 +123,10 @@ function App() {
             <img src="./images/React.png" alt="" style={{width:65, height:50}}/>
           </div>
         </div>
-        <div className="container education" style={fadeInStyles}>
+        <div className="container course" style={fadeInStyles}>
           <h1><FaGraduationCap /> Course</h1>
           <h2>JavaScript - March 2024</h2>
-            <div className="text education-text">
+            <div className="text course-text">
               <h3>Royal Embassy Of Saudi Arabia - Mostar<br/></h3>
               <p>In March 2024, I attended a rigorous JavaScript course hosted at the Royal Embassy of Saudi Arabia. Through engaging lectures and practical exercises, I deepened my understanding of JavaScript's core concepts and honed my programming skills. After completing the course and passing the final assessment, I earned a certification, empowering me to apply my expertise in real-world projects with confidence.</p>
               <img src="./images/centar.png" alt="" style={fadeInStylesImg} />
