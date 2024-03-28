@@ -2,7 +2,6 @@ import './App.css';
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { FaInfoCircle } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
-import { FaComputer } from "react-icons/fa6";
 import { FaLanguage } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -96,33 +95,6 @@ function App() {
               <img src="./images/srednja.jpg" alt="" style={fadeInStylesImg}/>
             </div>
           </div>
-        <div className="container skills" style={fadeInStyles}>
-          <h1><FaComputer /> Skills</h1>
-          <div className="text skills-text">
-            <p>C++ <b>Very experienced</b><br/><br/>
-              C# <b>Experienced</b><br/><br/>
-              Java <b>Reasonably experienced</b><br/><br/>
-              HTML <b>Expert</b><br/><br/>
-              CSS <b>Expert</b><br/><br/>
-              JavaScript <b>Experienced</b><br/><br/></p>
-              React JS <b>Experienced</b>
-          </div>
-        </div>
-        <div className="text skills-icons" style={fadeInStyles}>
-          <div className="first-row">
-            <img src="./images/C++-Logo.wine.png" alt="" style={{width:90, height:55, float:'left'}}/>
-            <img src="./images/c-sharp.png" alt="" style={{width:45, height:45}}/>
-            <img src="./images/java-logo-1.png" alt="" style={{width:45, height:45, float:'right'}}/>
-          </div>
-          <div className="second-row">
-            <img src="./images/html.png" alt="" style={{width:55, height:55}}/>
-            <img src="./images/css-logo.png" alt="" style={{width:35, height:55}}/>
-          </div>
-          <div className="third-row">
-            <img src="./images/javascript.png" alt="" style={{width:65, height:45}}/>
-            <img src="./images/React.png" alt="" style={{width:65, height:50}}/>
-          </div>
-        </div>
         <div className="container course" style={fadeInStyles}>
           <h1><FaGraduationCap /> Course</h1>
           <h2>JavaScript - March 2024</h2>

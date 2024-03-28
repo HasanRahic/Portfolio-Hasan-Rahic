@@ -106,35 +106,6 @@ body{
 .course-text h3{
     font-size: 1.4rem;
 }
-.skills-text{
-    font-size: 25px;
-    padding: 20px;
-    margin: auto;
-    border-bottom: 0;
-}
-.skills-icons{
-    display: block;
-    margin: auto;
-    padding: 20px;
-    margin-bottom: 350px;
-    border-top: 0;
-}
-.first-row{
-    margin-bottom: 20px;
-}
-.second-row{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 85px;
-    margin-left: 85px;
-    margin-bottom: 20px;
-}
-.third-row{
-    display: flex;
-    justify-content: center;
-    margin-right: 35px;
-    margin-left: 35px;
-}
 .conv-text{
     font-size: 18px;
     margin: auto;
@@ -142,11 +113,11 @@ body{
     padding-top: -300;
 }
 .conv-text p{
-    padding: 15px;
+    padding: 10px;
 }
 .conv-img{
     border-top: 0;
-    padding: 20px;
+    padding: 30px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -295,9 +266,6 @@ body{
 }
 .conv{
     margin-bottom: 0;
-}
-.skills{
-    margin-bottom: 100px;
 }
 .education{
     margin-bottom: 450px;
