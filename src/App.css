@@ -291,6 +291,9 @@ h2{
     .socials{
         margin-top: 150px;
     }
+    .buttons{
+        margin-top: 150px;
+    }
 }
 @media screen and (max-width:600px) {
     *{
@@ -303,7 +306,7 @@ h2{
         width: 100%;
     }
     .resume{
-        margin-bottom: 150px;
+        margin-bottom: 100px;
     }
     .header{
         display: grid;
@@ -321,9 +324,16 @@ h2{
     .text{
         width: 300px;
         margin: auto;
+        margin-bottom: 100px;
+    }
+    .education-text{
+        margin-bottom: 100px;
     }
     .education-text img{
         width: 250px;
+    }
+    .course{
+        margin-top: 100px;
     }
     .course-text img{
         width: 250px;
