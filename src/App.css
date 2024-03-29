@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background: repeating-radial-gradient(#308ba4d0,#11434190);
     font-family: "PT Sans", sans-serif;
     color: aliceblue;
+    width: 100%;
 }
 
 .main{
-    width: 1000px;
-    display: flex;
+    width: 800px;
+    display: grid;
+    grid-template-columns: auto;
     justify-content: center;
-    flex-direction: column;
     margin: 50px auto;
     padding: 10px;
     border-radius: 35px;
@@ -26,8 +33,7 @@ body{
     justify-content: flex-end;
     margin: auto;
     text-align: center;
-    width: 900px;
-
+    width: 700px;
 }
 .resume{
     display: flex;
@@ -43,8 +49,7 @@ body{
 }
 .header img{
     float: left;
-    width: 450px;
-    height: 450px;
+    width: 350px;
     border-radius: 20px;
     margin: 0 10px;
     margin-right: 30px;
@@ -57,6 +62,7 @@ body{
     border-top: 1px solid rgb(42, 96, 82);
     border-bottom: 1px solid rgb(42, 96, 82);
     border-radius: 20px;
+    padding: 30px;
 }
 .container{
     height: 70vh;
@@ -68,6 +74,12 @@ body{
     display: block;
     margin: 90px auto;
     text-align: center;
+}
+h1{
+    padding-bottom: 10px;
+}
+h2{
+    padding-bottom: 10px;
 }
 .about-text{
     font-size: 25px;
@@ -92,6 +104,7 @@ body{
 }
 .course-text{
     padding: 15px;
+    margin: auto;
 }
 .course img{
     width: 400px;
@@ -107,13 +120,10 @@ body{
     font-size: 1.4rem;
 }
 .conv-text{
-    font-size: 18px;
+    font-size: 20px;
     margin: auto;
     border-bottom: 0;
     padding-top: -300;
-}
-.conv-text p{
-    padding: 10px;
 }
 .conv-img{
     border-top: 0;
@@ -167,6 +177,7 @@ body{
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 20px;
+    margin-top: 30px;
 }
 .github{
     margin-bottom: 100px;
@@ -214,7 +225,7 @@ body{
     margin-top: 250px;
 }
 .socials{
-    width: 700px;
+    width: 670px;
     margin: auto;
     padding-top: 100px;
 }
@@ -272,4 +283,133 @@ body{
 }
 .buttons{
     margin-bottom: 0;
+}
+@media screen and (max-height:770px) {
+    .conv-img{
+        margin-top: 150px;
+    }
+    .socials{
+        margin-top: 150px;
+    }
+}
+@media screen and (max-width:600px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main{
+        margin: auto;
+        width: 100%;
+    }
+    .resume{
+        margin-bottom: 150px;
+    }
+    .header{
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 400px;
+        margin: auto;
+    }
+    .header img{
+        margin-bottom: 150px;
+        margin: auto;
+    }
+    .text{
+        width: 300px;
+        margin: auto;
+    }
+    .education-text img{
+        width: 250px;
+    }
+    .course-text img{
+        width: 250px;
+    }
+    .conv h1{
+        width: 300px;
+    }
+    .conv-img img{
+        width: 250px;
+    }
+    .conv-img{
+        margin-top: 600px;
+    }
+    .github{
+        width: 300px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .github p{
+        width: 250px;
+        font-size: 13px;
+    }
+    .github button{
+        padding: 10px 30px;
+    }
+    .linkedin{
+        width: 300px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .linkedin p{
+        width: 250px;
+        font-size: 13px;
+    }
+    .linkedin button{
+        padding: 10px 30px;
+    }
+    .mail{
+        width: 300px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .mail p{
+        width: 250px;
+        font-size: 13px;
+    }
+    .mail button{
+        padding: 10px 30px;
+    }
+    .social{
+        display: block;
+    }
+    .socials{
+        display: block;
+        width: 300px;
+        padding-top: 0;
+    }
+    .instagram-facebook{
+        display: block;
+        width: 300px;
+        margin: auto;
+        height: 300px;
+    }
+    .instagram-facebook p{
+        font-size: 13px;
+        width: 250px;
+    }
+    .instagram{
+        width: 250px;
+        margin: auto;
+    }
+    .facebook{
+        width: 250px;
+        margin: auto;
+    }
+    .instagram button{
+        padding: 10px 30px;
+        margin-bottom: 50px;
+        width: 200px;
+    }
+    .facebook button{
+        padding: 10px 30px;
+        width: 200px;
+        margin-left: 20px;
+    }
 }
