@@ -1,0 +1,89 @@
+.container-social{
+    height: 60vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.socials{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid rgb(42, 96, 82);
+    border-bottom: 1px solid rgb(42, 96, 82);
+    border-radius: 20px;
+    padding: 30px;
+}
+.socials p{
+    font-size: 20px;
+}
+.instagram-facebook button{
+    margin: auto 30px;
+    padding: 15px 50px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 0;
+    opacity: 0.9;
+    color: rgba(3, 16, 18, 0.772);
+    cursor: pointer;
+    margin-top: 30px;
+}
+.instagram-facebook button:hover{
+    color: aliceblue;
+    background: #11434190;
+}
+.instagram{
+    clear: left;
+    float: left;
+}
+.facebook{
+    clear: right;
+    float: right;
+}
+@media screen and (max-width:600px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-social{
+        width: 70%;
+        margin-bottom: 150px;
+        height: 60vh;
+    }
+    .instagram-facebook{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width:500px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-social{
+        width: 80%;
+        margin-bottom: 150px;
+        height: 60vh;
+    }
+}
+@media screen and (max-width:440px){
+    .instagram-facebook button{
+        padding: 10px 30px;
+    }
+}
+@media screen and (max-width:390px){
+    .instagram-facebook button{
+        padding: 10px 10px;
+    }
+}

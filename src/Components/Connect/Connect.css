@@ -1,0 +1,77 @@
+.container-buttons{
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.github , .linkedin , .mail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid rgb(42, 96, 82);
+    border-bottom: 1px solid rgb(42, 96, 82);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 75px;
+}
+.github p , .linkedin p, .mail p{
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.github button, .linkedin button, .mail button{
+    margin: auto 30px;
+    padding: 15px 50px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 0;
+    opacity: 0.9;
+    color: rgba(3, 16, 18, 0.772);
+    cursor: pointer;
+}
+.github button:hover, .linkedin button:hover, .mail button:hover{
+    color: aliceblue;
+    background: #11434190;
+}
+@media screen and (max-width:600px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-buttons{
+        width: 70%;
+        margin-bottom: 150px;
+        height: 150vh;
+    }
+
+}
+@media screen and (max-width:480px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-buttons{
+        width: 80%;
+        margin-bottom: 150px;
+        height: 200vh;
+    }
+    .github button, .linkedin button, .mail button{
+        padding: 10px 20px;
+    }
+    
+}
+@media screen and (max-width:350px){
+    .github button, .linkedin button{
+        padding: 10px 10px;
+    }
+}
