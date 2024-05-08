@@ -148,3 +148,8 @@ body{
         width: 90%;
     }
 }
+@media screen and (max-width:350px) {
+    .resume{
+        margin-bottom: 110px;
+    }
+}
