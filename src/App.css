@@ -130,7 +130,7 @@ body{
         margin: auto;
     }
     .resume{
-        margin-bottom: 150px;
+        margin-bottom: 130px;
         width: 60%;
         font-size: 35px;
     }
@@ -148,7 +148,7 @@ body{
         width: 90%;
     }
 }
-@media screen and (max-width:350px) {
+@media screen and (max-width:380px) {
     .resume{
         margin-bottom: 110px;
     }
