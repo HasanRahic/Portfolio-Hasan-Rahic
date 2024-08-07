@@ -33,14 +33,6 @@ function App() {
     };
   }, []);
 
-  const fadeInStyles = {
-    transition: 'opacity 3.5s ease',
-    opacity: isVisible ? 1 : 0,
-  };
-  const fadeInStylesImg = {
-    transition: 'opacity 8.5s ease',
-    opacity: isVisible ? 1 : 0,
-  };
 
   return (
     <>
@@ -52,17 +44,15 @@ function App() {
             <AnimatedOnScroll><p>Hasan Rahić</p></AnimatedOnScroll>
           </div>
         </div>
-        
-
-        <AnimatedOnScroll><About /></AnimatedOnScroll>
-        <AnimatedOnScroll><Education /></AnimatedOnScroll>
-        <AnimatedOnScroll><Course /></AnimatedOnScroll>
-        <AnimatedOnScroll><Event /></AnimatedOnScroll>
-        <AnimatedOnScroll><Skills /></AnimatedOnScroll>
-        <AnimatedOnScroll><Languages /></AnimatedOnScroll>
-        <AnimatedOnScroll><Hobbies /></AnimatedOnScroll>
-        <AnimatedOnScroll><Connect /></AnimatedOnScroll>
-        <AnimatedOnScroll><Socials /></AnimatedOnScroll>
+        <About />
+        <Education />
+        <Course />
+        <Event />
+        <Skills />
+        <Languages />
+        <Hobbies />
+       <Connect />
+        <Socials />
       </div>
     </>
   );

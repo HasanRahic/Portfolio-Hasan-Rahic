@@ -8,7 +8,7 @@ import { AnimatedOnScroll } from "react-animated-css-onscroll";
 const Socials = () => {
   return (
     <div>
-        <div className="container-social">
+        <div className="container-social block">
           <div className="socials">
             <p>Stay updated with my latest insights, projects, and thoughts by following me on social media. Click the buttons below to connect:</p>
             <div className="instagram-facebook">

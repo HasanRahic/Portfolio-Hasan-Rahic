@@ -8,7 +8,7 @@ import HasoTeretana from '../../Images/HasoTeretana11.jpeg'
 const Hobbies = () => {
   return (
     <div>
-        <div className="container-hobbies">
+        <div className="container-hobbies block">
           <h1><FaClock  /> Hobbies and Interests</h1>
           <div className="text-hobbies-text">
             <p>My hobby of going to the gym provides me with both physical and mental challenges, stress relief, and

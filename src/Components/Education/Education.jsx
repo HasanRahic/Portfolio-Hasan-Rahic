@@ -34,7 +34,7 @@ const Education = () => {
 
   return (
     <div>
-        <div className="container-education">
+        <div className="container-education block">
           <h1><FaGraduationCap /> Education</h1>
           <h2>OCTOBER 2022 - CURRENT</h2>
           <div className="text-education">
@@ -44,7 +44,7 @@ const Education = () => {
             <AnimatedOnScroll animationIn="zoomIn"><img src={Sveuciliste} alt="" /></AnimatedOnScroll>
           </div>
         </div>
-        <div className="container-education">
+        <div className="container-education block">
           <h2>SEPTEMBER 2018 - JUNE 2022</h2>
           <div className="text-education">
             <h3>JU Srednja elektrotehnička škola / Information Technologies<br/></h3>

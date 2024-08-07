@@ -10,7 +10,7 @@ import Hakaton4 from '../../Images/hackathon7.jpeg';
 const Event = () => {
   return (
     <div>
-        <div className="container-conv" >
+        <div className="container-conv block">
           <h1><FaCalendarCheck /> Hackathon 2024 BEST Mostar</h1>
           <div className="text-conv">
             <p>Thrilled to have participated in the exhilarating 2024 Best Mostar Hackathon! 

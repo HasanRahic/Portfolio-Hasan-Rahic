@@ -11,7 +11,7 @@ import reactPng from '../../Images/React.png';
 const Skills = () => {
   return (
     <div>
-        <div className="container-skills">
+        <div className="container-skills block">
             <div className="skills">
             <p>Continuously enhancing and refining my skills through ongoing development and learning.</p>
             <div className="img-skills">

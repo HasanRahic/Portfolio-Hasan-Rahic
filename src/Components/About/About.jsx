@@ -27,7 +27,7 @@ const About = () => {
   };
 
   return (
-    <div className="container-about">
+    <div className="container-about block">
         <h1><FaInfoCircle /> About</h1>
         <div className="about-text">
             <p>My name is Hasan, and I come from

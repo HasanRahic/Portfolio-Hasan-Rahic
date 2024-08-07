@@ -9,7 +9,7 @@ import { FaEnvelope } from "react-icons/fa";
 const Connect = () => {
   return (
     <div>
-        <div className="container-buttons">
+        <div className="container-buttons block">
           <div className="btn-links">
             <div className="github">
               <AnimatedOnScroll animationIn="fadeInLeft">

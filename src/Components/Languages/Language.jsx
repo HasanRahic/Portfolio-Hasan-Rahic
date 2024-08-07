@@ -10,7 +10,7 @@ const Language = () => {
   return (
     <div>
         <AnimatedOnScroll animationIn="zoomIn">
-          <div className="container-languages">
+          <div className="container-languages block">
             <h1><FaLanguage /> Languages</h1>
             <div className="text-languages">
               <p><img src={UK} alt="" style={{width:30}} /> &bull; English <b>Native or bilingual</b> &bull;</p>

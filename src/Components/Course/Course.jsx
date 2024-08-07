@@ -7,7 +7,7 @@ import { AnimatedOnScroll } from "react-animated-css-onscroll";
 const Course = () => {
   return (
     <div>
-        <div className="container-course" >
+        <div className="container-course block" >
           <h1><FaGraduationCap /> Course</h1>
           <h2>JavaScript - March 2024</h2>
             <div className="course-text">
