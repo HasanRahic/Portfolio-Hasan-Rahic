@@ -41,6 +41,9 @@
     color: aliceblue;
     background: #11434190;
 }
+.btn-links button{
+    margin: auto;
+}
 @media screen and (max-width:600px) {
     *{
         margin: 0;

@@ -18,7 +18,7 @@ body{
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 10px;
     border-radius: 25px;
     box-shadow: 0 0 20px rgba(26, 26, 26, 0.1),
@@ -79,6 +79,23 @@ body{
     height: 70vh;
     margin: auto;
     text-align: center;
+}
+button:has(svg){
+    padding-right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    fill: none;
+}
+h1:has(svg){
+    padding-right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    fill: none;
+}
+a{
+    text-decoration: none;
 }
 @keyframes appear{
     from{
