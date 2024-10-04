@@ -26,13 +26,12 @@
 .img-skills{
     display: grid;
     grid-template-columns: auto auto;
-    gap: 10px;
-    justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    gap: 0 6rem;
 }
 .img-skills img{
-    height: 150px;
+    width: 120px;
+    margin-top: 20px;
     border-radius: 15px;
 }
 .img-skills img:hover{
@@ -47,8 +46,8 @@
     }
     .container-skills{
         width: 70%;
-        margin-bottom: 150px;
-        height: 100vh;
+        margin-bottom: 100px;
+        height: fit-content;
     }
     .skills{
         width: 100%;
@@ -56,8 +55,9 @@
         height: 100vh;
     }
     .img-skills img{
-        height: 120px;
+        width: 90px;
     }
+
 
 }
 @media screen and (max-width:480px){
@@ -77,6 +77,7 @@
     }
     .img-skills img{
         height: 90px;
+        width: 70px;
     }
     .img-skills{
         gap: 0;
@@ -85,5 +86,6 @@
 @media screen and (max-width:350px){
     .img-skills img{
         height: 70px;
+        width: 50;
     }
 }

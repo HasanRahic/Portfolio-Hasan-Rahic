@@ -51,7 +51,7 @@ function App() {
         <Skills />
         <Languages />
         <Hobbies />
-       <Connect />
+        <Connect />
         <Socials />
       </div>
     </>

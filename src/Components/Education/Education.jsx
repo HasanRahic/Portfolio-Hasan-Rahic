@@ -40,7 +40,7 @@ const Education = () => {
           <div className="text-education">
             <h3>Faculty of Information Technologies / Software engineering<br/></h3>
             <p>I'm currently studying at the Faculty of Information Technologies
-              at the University of Dzemal Bjedic Mostar. I'm currently a second-year student.</p>
+              at the University of Dzemal Bjedic Mostar. I'm currently a third-year student.</p>
             <AnimatedOnScroll animationIn="zoomIn"><img src={Sveuciliste} alt="" /></AnimatedOnScroll>
           </div>
         </div>
