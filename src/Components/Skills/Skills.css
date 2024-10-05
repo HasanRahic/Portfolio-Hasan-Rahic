@@ -76,16 +76,17 @@
         margin-bottom: 150px;
     }
     .img-skills img{
-        height: 90px;
-        width: 70px;
+        height: 80px;
+        width: 60px;
     }
     .img-skills{
-        gap: 0;
+        gap: 0 3rem;
+        border-radius: 5px;
     }
 }
 @media screen and (max-width:350px){
     .img-skills img{
         height: 70px;
-        width: 50;
+        width: 50px;
     }
 }
