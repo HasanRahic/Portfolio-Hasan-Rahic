@@ -1,20 +1,59 @@
-# ReactJS Portfolio
+# Portfolio
 
-  Welcome to my portfolio! This website serves as a showcase of my skills, projects, and experiences in the field of front-end developing. Built with ReactJS, it combines sleek design with seamless functionality to provide visitors with an engaging and informative experience.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
 
-## Features
-  - **Project Showcase:** Explore a curated selection of my latest projects, including descriptions, technologies used, and links to live demos or repositories.
-  - **Skills Overview:** Get insights into my technical skills and areas of expertise, ranging from programming languages to tools and frameworks.
-  - **About Me:** Learn more about my background, education, professional experience, and what drives my passion for coding.
-  - **Contact Form:** Reach out to me easily through a contact form for inquiries, collaboration opportunities, or just to say hello!
+## Development server
 
-## Technologies Used
-  - **ReactJS:** Frontend framework for building dynamic and interactive user interfaces.
-  - **HTML/CSS:** Structuring and styling the content to create visually appealing layouts.
-  - **JavaScript:** Adding interactivity and functionality to the website.
-  - **GitHub Pages:** Hosting platform for deploying the portfolio website.
+To start a local development server, run:
 
-## Getting in Touch
-  I'm always open to new opportunities and collaborations. Whether you have a project in mind, want to discuss potential collaborations, or just want to connect, feel free to reach out to me through the contact form on my portfolio website.
+```bash
+ng serve
+```
 
-  *Thank you for visiting!*
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
