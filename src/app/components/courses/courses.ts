@@ -3,6 +3,15 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 
+type CourseItem = {
+  title: string;
+  period?: string;
+  location?: string;
+  issuer: string;
+  githubUrl?: string;
+  certificateImage: string;
+};
+
 @Component({
   selector: 'app-courses',
   imports: [CommonModule],
@@ -25,6 +34,25 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class Courses {
   showAnimation = false;
+  selectedCertificate: CourseItem | null = null;
+  imageLoadError = false;
+
+  courses: CourseItem[] = [
+    {
+      title: 'JavaScript',
+      issuer: 'King Fahd Cultural Center',
+      period: '01/2024 - 03/2024',
+      location: 'Mostar',
+      certificateImage: '/assets/certificates/javascript-kralj-fahd.jpg',
+    },
+    {
+      title: 'Build an app with ASPNET Core and Angular from scratch',
+      issuer: 'Udemy',
+      period: '08/2025',
+      githubUrl: 'https://github.com/HasanRahic/angular-.net-course',
+      certificateImage: '/assets/certificates/udemy-angular-dotnet.jpg',
+    },
+  ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -32,6 +60,20 @@ export class Courses {
     if (isPlatformBrowser(this.platformId)) {
       this.observeAnimations();
     }
+  }
+
+  openCertificate(course: CourseItem) {
+    this.selectedCertificate = course;
+    this.imageLoadError = false;
+  }
+
+  closeCertificate() {
+    this.selectedCertificate = null;
+    this.imageLoadError = false;
+  }
+
+  onCertificateImageError() {
+    this.imageLoadError = true;
   }
 
   private observeAnimations() {

@@ -2,17 +2,49 @@
   <div class="container mx-auto max-w-4xl">
     <h2 class="text-4xl font-bold text-center mb-12">Courses & Certifications</h2>
     <div class="space-y-4">
-      <div
-        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300">
-        <h3 class="text-xl font-semibold mb-1">JavaScript, King Fahd Cultural Center</h3>
-        <p class="text-gray-300 mb-2">01/2024 – 03/2024 | Mostar</p>
-        <p class="text-green-400 font-semibold">Certificate earned</p>
-      </div>
-      <div
-        class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300">
-        <h3 class="text-xl font-semibold mb-1">Angular and .NET course, Udemy</h3>
-        <p class="text-green-400 font-semibold">Certificate earned</p>
-      </div>
+      <button
+        *ngFor="let course of courses"
+        type="button"
+        (click)="openCertificate(course)"
+        class="w-full text-left bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300">
+        <h3 class="text-xl font-semibold mb-1">{{ course.title }}, {{ course.issuer }}</h3>
+        <p *ngIf="course.period || course.location" class="text-gray-300 mb-2">
+          {{ course.period }}<span *ngIf="course.period && course.location"> | </span>{{ course.location }}
+        </p>
+        <a
+          *ngIf="course.githubUrl"
+          [href]="course.githubUrl"
+          target="_blank"
+          (click)="$event.stopPropagation()"
+          class="text-blue-400 hover:underline inline-block mb-2">View project on GitHub</a>
+        <p class="text-green-400 font-semibold">Certificate earned - Click to view</p>
+      </button>
     </div>
   </div>
 </section>
+
+<div
+  *ngIf="selectedCertificate"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+  (click)="closeCertificate()">
+  <div
+    class="relative w-full max-w-5xl bg-gray-900 border border-white/20 rounded-xl p-4"
+    (click)="$event.stopPropagation()">
+    <button
+      type="button"
+      class="absolute top-3 right-3 text-white text-2xl leading-none hover:text-red-400"
+      (click)="closeCertificate()"
+      aria-label="Close certificate preview">&times;</button>
+    <h3 class="text-xl font-semibold mb-4 pr-10">{{ selectedCertificate.title }} - Certificate</h3>
+    <img
+      *ngIf="!imageLoadError"
+      [src]="selectedCertificate.certificateImage"
+      [alt]="selectedCertificate.title + ' certificate'"
+      class="w-full max-h-[80vh] object-contain rounded-md"
+      (error)="onCertificateImageError()" />
+    <p *ngIf="imageLoadError" class="text-gray-300">
+      Certificate image is not available yet. Add it to
+      <code>public{{ selectedCertificate.certificateImage }}</code>.
+    </p>
+  </div>
+</div>
