@@ -1,11 +1,41 @@
-<nav
-  class="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 bg-black/50 backdrop-blur-sm rounded-full p-5 mt-4 hidden md:block">
-  <ul class="flex space-x-4">
-    <li><a href="#hero" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-    <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
-    <li><a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a></li>
-    <li><a href="#experience" class="text-gray-300 hover:text-white transition-colors">Experience</a></li>
-    <li><a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a></li>
-    <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-  </ul>
+<nav class="nav-shell" aria-label="Main navigation">
+  <div class="nav-desktop">
+    <a href="#hero" class="nav-brand" (click)="closeMobileMenu()">HR</a>
+    <ul class="nav-links">
+      <li *ngFor="let item of navItems">
+        <a
+          [href]="'#' + item.id"
+          class="nav-link"
+          (click)="setActiveSection(item.id)"
+          [class.is-active]="isActive(item.id)">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-mobile">
+    <a href="#hero" class="nav-brand" (click)="closeMobileMenu()">HR</a>
+    <button
+      type="button"
+      class="menu-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" [class.is-open]="isMobileMenuOpen">
+    <a
+      *ngFor="let item of navItems"
+      [href]="'#' + item.id"
+      class="mobile-link"
+      [class.is-active]="isActive(item.id)"
+      (click)="setActiveSection(item.id); closeMobileMenu()">
+      {{ item.label }}
+    </a>
+  </div>
 </nav>

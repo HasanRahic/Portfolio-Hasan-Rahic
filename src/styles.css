@@ -1,5 +1,317 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+	--accent-blue: 59, 130, 246;
+	--accent-teal: 20, 184, 166;
+	--surface-soft: rgba(255, 255, 255, 0.07);
+	--surface-strong: rgba(255, 255, 255, 0.14);
+	--panel-deep: rgba(9, 20, 38, 0.68);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html, body { height: 100%; overflow-x: hidden; }
+body {
+	margin: 0;
+	font-family: 'Outfit', 'Segoe UI', sans-serif;
+	background:
+		radial-gradient(80rem 48rem at 8% -8%, rgba(59, 130, 246, 0.2), transparent 62%),
+		radial-gradient(72rem 44rem at 92% 0%, rgba(20, 184, 166, 0.14), transparent 64%),
+		#0b1220;
+	color: #f3f6fb;
+}
+
+::selection {
+	background: rgba(56, 189, 248, 0.35);
+	color: #ffffff;
+}
+
+@keyframes cardFadeUp {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+section[id] {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	border-top: 1px solid rgba(148, 196, 255, 0.08);
+}
+
+section[id]::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(rgba(103, 169, 255, 0.065) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(103, 169, 255, 0.065) 1px, transparent 1px);
+	background-size: 48px 48px;
+	opacity: 0.08;
+	mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 18%, rgba(0, 0, 0, 0.9) 82%, transparent 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+#hero::before {
+	display: none;
+}
+
+section[id]::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(52rem 28rem at 12% 12%, rgba(var(--accent-blue), 0.08), transparent 68%),
+		radial-gradient(44rem 24rem at 88% 88%, rgba(var(--accent-teal), 0.07), transparent 70%);
+	opacity: 0.35;
+	pointer-events: none;
+	z-index: 0;
+}
+
+#hero::after {
+	opacity: 0.22;
+	background:
+		radial-gradient(48rem 28rem at 14% 8%, rgba(var(--accent-blue), 0.15), transparent 70%),
+		radial-gradient(40rem 24rem at 82% 10%, rgba(var(--accent-teal), 0.12), transparent 72%);
+}
+
+#about,
+#experience,
+#projects {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+#skills,
+#education,
+#courses,
+#contact {
+	background: linear-gradient(180deg, rgba(44, 132, 255, 0.08), rgba(7, 14, 26, 0.16));
+}
+
+section[id]:not(#hero) > .container {
+	position: relative;
+	padding: clamp(1.4rem, 2.6vw, 2.2rem);
+	border-radius: 1.35rem;
+	border: 1px solid rgba(150, 211, 255, 0.2);
+	background:
+		linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)),
+		var(--panel-deep);
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.18),
+		0 18px 36px rgba(2, 10, 20, 0.35);
+	backdrop-filter: blur(10px);
+	overflow: hidden;
+}
+
+section[id]:not(#hero) > .container::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(32rem 16rem at 10% 0%, rgba(var(--accent-blue), 0.16), transparent 72%),
+		radial-gradient(26rem 14rem at 90% 0%, rgba(var(--accent-teal), 0.12), transparent 72%);
+	opacity: 0.65;
+	pointer-events: none;
+	z-index: 0;
+}
+
+section[id]:not(#hero) > .container > * {
+	position: relative;
+	z-index: 1;
+}
+
+section[id] > * {
+	position: relative;
+	z-index: 1;
+}
+
+section[id] h2 {
+	position: relative;
+	display: table;
+	left: auto;
+	transform: none;
+	margin-inline: auto;
+	letter-spacing: 0.01em;
+	background: linear-gradient(90deg, #d9f2ff 0%, #8ec5ff 48%, #9ce7da 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: 0 6px 26px rgba(88, 160, 255, 0.2);
+}
+
+section[id] h2::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -14px;
+	transform: translateX(-50%);
+	width: 84px;
+	height: 3px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, rgba(59, 130, 246, 0.15), rgba(125, 211, 252, 0.92), rgba(20, 184, 166, 0.15));
+}
+
+#skills .grid > div,
+#experience .space-y-8 > div,
+#education .container > div,
+#projects .grid > div,
+#courses .space-y-4 > button {
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+	animation: cardFadeUp 0.65s ease both;
+	background:
+		linear-gradient(160deg, var(--surface-strong), var(--surface-soft));
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.22),
+		0 10px 24px rgba(4, 10, 20, 0.24);
+	backdrop-filter: blur(12px);
+}
+
+#projects .grid > div {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+#projects .grid > div a {
+	margin-top: auto;
+	padding-top: 0.9rem;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+#skills .grid > div:nth-child(1),
+#projects .grid > div:nth-child(1) { animation-delay: 0.05s; }
+#skills .grid > div:nth-child(2),
+#projects .grid > div:nth-child(2) { animation-delay: 0.12s; }
+#skills .grid > div:nth-child(3),
+#projects .grid > div:nth-child(3) { animation-delay: 0.2s; }
+
+#skills .grid > div::after,
+#experience .space-y-8 > div::after,
+#education .container > div::after,
+#projects .grid > div::after,
+#courses .space-y-4 > button::after {
+	content: '';
+	position: absolute;
+	inset: -1px;
+	border-radius: inherit;
+	background: linear-gradient(135deg, rgba(74, 161, 255, 0.35), rgba(48, 213, 190, 0.22));
+	opacity: 0;
+	transition: opacity 0.32s ease;
+	pointer-events: none;
+}
+
+#skills .grid > div:hover,
+#experience .space-y-8 > div:hover,
+#education .container > div:hover,
+#projects .grid > div:hover,
+#courses .space-y-4 > button:hover {
+	transform: translateY(-6px) scale(1.01);
+	border-color: rgba(102, 181, 255, 0.55);
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.3),
+		0 18px 36px rgba(20, 58, 110, 0.35);
+}
+
+#hero a,
+#contact a {
+	position: relative;
+	display: inline-block;
+	transition: color 0.25s ease;
+}
+
+#contact .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#contact .container > p,
+#contact .container > div,
+#contact .container > h2 {
+	text-align: center;
+}
+
+#hero a::after,
+#contact a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 0;
+	height: 2px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #60a5fa, #2dd4bf);
+	transition: width 0.25s ease;
+}
+
+#hero a:hover::after,
+#contact a:hover::after {
+	width: 100%;
+}
+
+#hero .hero-cta::after,
+#hero .hero-social-pill::after,
+#hero .hero-scroll-cue::after {
+	display: none;
+}
+
+#skills .grid > div:hover::after,
+#experience .space-y-8 > div:hover::after,
+#education .container > div:hover::after,
+#projects .grid > div:hover::after,
+#courses .space-y-4 > button:hover::after {
+	opacity: 1;
+}
+
+#skills .grid > div h3,
+#experience .space-y-8 > div h3,
+#education .container > div h3,
+#projects .grid > div h3,
+#courses .space-y-4 > button h3 {
+	text-align: center;
+}
+
+#experience .space-y-8 > div p,
+#education .container > div p,
+#projects .grid > div p,
+#courses .space-y-4 > button p {
+	text-align: center;
+}
+
+#courses .space-y-4 > button a {
+	display: table;
+	margin-inline: auto;
+	text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	section[id]::before,
+	section[id]::after,
+	#skills .grid > div,
+	#experience .space-y-8 > div,
+	#education .container > div,
+	#projects .grid > div,
+	#courses .space-y-4 > button {
+		animation: none;
+	}
+}
+
+@media (max-width: 768px) {
+	section[id]::before {
+		opacity: 0.05;
+		background-size: 56px 56px;
+	}
+
+	section[id]:not(#hero) > .container {
+		padding: 1.2rem;
+		border-radius: 1rem;
+	}
+}
