@@ -52,6 +52,12 @@ export class Courses {
       githubUrl: 'https://github.com/HasanRahic/angular-.net-course',
       certificateImage: '/assets/certificates/udemy-angular-dotnet.jpg',
     },
+    {
+      title: 'Flutter & Dart - The Complete Guide',
+      issuer: 'Udemy',
+      period: '04/2026',
+      certificateImage: '/assets/certificates/certificate-flutter.png',
+    },
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
