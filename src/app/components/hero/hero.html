@@ -1,46 +1,64 @@
-<section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-  <div class="hero-bg-layer"></div>
-  <div class="hero-noise"></div>
+<section id="hero" class="relative">
+  <div class="hero-pin-space">
+    <div class="hero-sticky">
+      <div class="hero-bg-layer"></div>
+      <div class="hero-noise"></div>
 
-  <div class="container hero-shell mx-auto px-6 md:px-10 relative z-10">
-    <div class="hero-intro-badge">Available for internship and junior roles</div>
-
-    <div class="hero-avatar-wrap">
-      <div class="hero-avatar-ring"></div>
-      <img src="/assets/haso.png" alt="Hasan Rahic profile photo"
-        class="hero-avatar w-40 h-40 md:w-44 md:h-44 rounded-full mx-auto shadow-2xl border-4 border-white/20">
-    </div>
-
-    <h1 class="hero-title">Hasan Rahić</h1>
-    <p class="hero-subtitle">Software Engineer who builds clean, practical, and high-impact web experiences.</p>
-
-    <div class="hero-cta-row">
-      <a href="assets/Hasan-Rahić-CV-Resume.pdf" download class="hero-cta hero-cta-primary">Download CV</a>
-      <a href="#projects" class="hero-cta hero-cta-ghost">View Projects</a>
-    </div>
-
-    <div class="hero-social-row" aria-label="Social links">
-      <a href="https://github.com/hasanrahic" target="_blank" class="hero-social-pill">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/hasan-rahi%C4%87-3941b2255/" target="_blank" class="hero-social-pill">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </div>
-
-    <div class="hero-stats" aria-label="Quick highlights">
-      <div class="hero-stat-card">
-        <span class="hero-stat-number">5+</span>
-        <span class="hero-stat-label">Projects Built</span>
+      <div class="hero-intro-caption" aria-hidden="true">
+        <h2 class="hero-intro-name">Hasan Rahić</h2>
+        <p class="hero-intro-role">Software Engineer</p>
+        <p class="hero-intro-hint">scroll ↓</p>
       </div>
-      <div class="hero-stat-card">
-        <span class="hero-stat-number">2022</span>
-        <span class="hero-stat-label">Engineering Journey Started</span>
+
+      <div class="container hero-shell mx-auto px-6 md:px-10 relative z-10">
+        <div class="hero-intro-badge">Available for internship and junior roles</div>
+
+        <div class="hero-avatar-wrap">
+          <div class="hero-avatar-ring"></div>
+          <img src="/assets/haso.png" alt="Hasan Rahic profile photo"
+            class="hero-avatar w-40 h-40 md:w-44 md:h-44 rounded-full mx-auto shadow-2xl border-4 border-white/20">
+        </div>
+
+        <h1 class="hero-title">Hasan Rahić</h1>
+        <p class="hero-typed" aria-label="Software Engineer, Full-Stack Developer, Angular + .NET, Flutter Developer">
+          <span>{{ typedText }}</span><span class="hero-caret" aria-hidden="true"></span>
+        </p>
+        <p class="hero-subtitle">Software Engineer who builds clean, practical, and high-impact web experiences.</p>
+
+        <div class="hero-cta-row">
+          <a href="assets/Hasan_Rahic_CV.pdf" download class="hero-cta hero-cta-primary">Download CV</a>
+          <a href="#projects" class="hero-cta hero-cta-ghost">View Projects</a>
+        </div>
+
+        <div class="hero-social-row" aria-label="Social links">
+          <a href="https://github.com/hasanrahic" target="_blank" class="hero-social-pill">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/hasan-rahi%C4%87-3941b2255/" target="_blank" class="hero-social-pill">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+
+        <div class="hero-stats" aria-label="Quick highlights">
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">{{ stats[0].value }}+</span>
+            <span class="hero-stat-label">Projects Built</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">{{ stats[1].value }}</span>
+            <span class="hero-stat-label">Certificates Earned</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">{{ stats[2].value }}</span>
+            <span class="hero-stat-label">Hackathons</span>
+          </div>
+        </div>
       </div>
+
+      <a href="#about" class="hero-scroll-cue" aria-label="Scroll to about section">
+        <span></span>
+      </a>
     </div>
   </div>
-
-  <a href="#about" class="hero-scroll-cue" aria-label="Scroll to about section">
-    <span></span>
-  </a>
+  <img class="hero-photo-float" src="/assets/haso.png" alt="" aria-hidden="true">
 </section>

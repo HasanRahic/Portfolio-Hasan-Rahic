@@ -1,6 +1,20 @@
 <section id="skills" class="p-20 px-6 bg-gray-800/50 backdrop-blur-sm" [@fadeInUp]="showAnimation ? 'true' : 'false'">
   <div class="container mx-auto max-w-6xl">
     <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+
+    <div class="skill-bars" aria-label="Main technologies">
+      <div class="skill-bar-row" *ngFor="let bar of bars">
+        <div class="skill-bar-head">
+          <span>{{ bar.label }}</span>
+          <span class="skill-bar-pct">{{ barsVisible ? bar.level : 0 }}%</span>
+        </div>
+        <div class="skill-bar-track">
+          <div class="skill-bar-fill" [style.width]="barsVisible ? bar.level + '%' : '0%'"
+            [style.transition-delay]="bar.delay + 'ms'"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="grid md:grid-cols-3 gap-8">
       <div
         class="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:border-blue-400/50 transition-all duration-300 transform hover:scale-105">

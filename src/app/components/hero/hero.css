@@ -3,6 +3,87 @@
 	max-width: 72rem;
 	padding-top: 6.5rem;
 	padding-bottom: 4.5rem;
+	opacity: 0; /* driven by hero.ts scroll progress */
+	will-change: opacity, transform;
+}
+
+/* ===== Pinned hero: screen stays fixed while photo + text morph into place ===== */
+.hero-pin-space {
+	height: 280vh; /* longer = smoother, slower transformation */
+}
+
+.hero-sticky {
+	position: sticky;
+	top: 0;
+	height: 100svh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.hero-intro-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 62vh; /* precise position set by hero.ts each frame */
+	text-align: center;
+	z-index: 6;
+	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero-intro-name {
+	width: fit-content;
+	margin-inline: auto;
+	font-size: clamp(2rem, 5vw, 3.6rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	background: linear-gradient(95deg, #f4fbff 0%, #8ec5ff 52%, #8ef5df 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	margin: 0 0 0.3rem;
+	animation: heroRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.hero-intro-role {
+	font-family: 'Consolas', 'Menlo', monospace;
+	font-size: clamp(1rem, 2.4vw, 1.4rem);
+	font-weight: 600;
+	color: #8ec5ff;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	margin: 0;
+	animation: heroRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+}
+
+.hero-intro-hint {
+	margin: 1.6rem 0 0;
+	font-size: 0.82rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: rgba(188, 228, 255, 0.7);
+	animation: heroRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
+}
+
+.hero-photo-float {
+	display: none; /* shown and positioned by hero.ts once measured */
+	position: fixed;
+	z-index: 30;
+	border-radius: 9999px;
+	object-fit: cover;
+	border: 4px solid rgba(255, 255, 255, 0.22);
+	box-shadow: 0 30px 70px rgba(30, 100, 200, 0.4);
+	pointer-events: none;
+	animation: heroRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.hero-avatar-wrap.docking {
+	visibility: hidden;
 }
 
 .hero-bg-layer {
@@ -89,6 +170,30 @@
 	background-clip: text;
 	color: transparent;
 	text-shadow: 0 18px 38px rgba(64, 146, 255, 0.26);
+}
+
+.hero-typed {
+	font-family: 'Consolas', 'Menlo', monospace;
+	font-size: clamp(1rem, 2.4vw, 1.35rem);
+	font-weight: 600;
+	color: #8ec5ff;
+	margin: 0 auto 1.1rem;
+	min-height: 1.7em;
+	letter-spacing: 0.01em;
+}
+
+.hero-caret {
+	display: inline-block;
+	width: 2px;
+	height: 1.1em;
+	margin-left: 3px;
+	vertical-align: text-bottom;
+	background: #2dd4bf;
+	animation: caretBlink 1s step-end infinite;
+}
+
+@keyframes caretBlink {
+	50% { opacity: 0; }
 }
 
 .hero-subtitle {
@@ -178,7 +283,7 @@
 
 .hero-stats {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 0.75rem;
 	max-width: 56rem;
 	margin: 0 auto;
@@ -279,31 +384,227 @@
 
 @media (max-width: 900px) {
 	.hero-stats {
-		grid-template-columns: 1fr;
-		max-width: 24rem;
+		grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+		gap: 0.6rem;
+		max-width: 34rem;
 	}
 }
 
+/* =====================================================================
+   MOBILE (≤640px) — full-width layout: everything stretches edge to
+   edge, stacked with a consistent 0.7rem rhythm, no dead gaps
+   ===================================================================== */
 @media (max-width: 640px) {
+	.hero-sticky {
+		/* center the block in the space below the navbar so leftover
+		   space is split evenly top and bottom */
+		align-items: center;
+	}
+
 	.hero-shell {
-		padding-top: 5.8rem;
-		padding-bottom: 4.8rem;
+		width: 100%;
+		max-width: 100%;
+		padding: 4.6rem 1rem 0.8rem;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
 	}
 
 	.hero-intro-badge {
-		font-size: 0.74rem;
+		align-self: center;
+		font-size: 0.7rem;
+		padding: 0.38rem 0.8rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.hero-avatar-wrap {
+		margin-bottom: 0.7rem;
+	}
+
+	.hero-avatar {
+		width: 6.2rem !important;
+		height: 6.2rem !important;
+	}
+
+	.hero-title {
+		font-size: 2.15rem;
+		margin-top: 0.6rem;
+		margin-bottom: 0.6rem;
+	}
+
+	.hero-typed {
+		font-size: 0.95rem;
+		margin: 0 auto 0.5rem;
+		min-height: 1.5em;
 	}
 
 	.hero-subtitle {
-		line-height: 1.62;
+		font-size: 0.93rem;
+		line-height: 1.55;
+		margin: 0 auto 0.9rem;
+		max-width: 100%;
 	}
+
+	/* two full-width buttons side by side — no wasted side space */
+	.hero-cta-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem;
+		width: 100%;
+		margin-bottom: 0.7rem;
+	}
+
+	.hero-cta {
+		width: 100%;
+		padding: 0.78rem 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	.hero-social-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem;
+		width: 100%;
+		margin-bottom: 0.7rem;
+	}
+
+	.hero-social-pill {
+		width: 100%;
+		justify-content: center;
+		padding: 0.6rem 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	/* stats: full-width rows, number + label inline */
+	.hero-stats {
+		grid-template-columns: 1fr;
+		gap: 0.6rem;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.hero-stat-card {
+		width: 100%;
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		gap: 0.55rem;
+		padding: 0.85rem 1rem;
+	}
+
+	.hero-stat-number {
+		font-size: 1.25rem;
+		margin-bottom: 0;
+	}
+
+	.hero-stat-label {
+		font-size: 0.92rem;
+	}
+
+	.hero-scroll-cue {
+		display: none;
+	}
+
+	.hero-intro-name {
+		font-size: 2rem;
+	}
+
+	.hero-intro-role {
+		font-size: 0.95rem;
+	}
+
+	.hero-intro-hint {
+		margin-top: 1rem;
+	}
+}
+
+/* very small phones — keep everything on one screen */
+@media (max-width: 380px) {
+	.hero-shell {
+		padding-top: 4.2rem;
+	}
+
+	.hero-avatar {
+		width: 5.4rem !important;
+		height: 5.4rem !important;
+	}
+
+	.hero-title {
+		font-size: 1.9rem;
+	}
+
+	.hero-subtitle {
+		font-size: 0.88rem;
+	}
+
+	.hero-stat-card {
+		padding: 0.7rem 0.8rem;
+	}
+}
+
+/* ===== Entrance choreography: elements rise in one after another ===== */
+@keyframes heroRise {
+	from {
+		opacity: 0;
+		transform: translateY(26px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero-intro-badge,
+.hero-avatar-wrap,
+.hero-title,
+.hero-typed,
+.hero-subtitle,
+.hero-cta-row,
+.hero-social-row,
+.hero-stats {
+	animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-intro-badge { animation-delay: 0.05s; }
+.hero-avatar-wrap { animation-delay: 0.15s; }
+.hero-title { animation-delay: 0.3s; }
+.hero-typed { animation-delay: 0.42s; }
+.hero-subtitle { animation-delay: 0.54s; }
+.hero-cta-row { animation-delay: 0.66s; }
+.hero-social-row { animation-delay: 0.78s; }
+.hero-stats { animation-delay: 0.9s; }
+
+/* ===== Title gradient shimmer ===== */
+@keyframes titleShimmer {
+	0%, 100% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+}
+
+.hero-title {
+	background-size: 200% 200%;
+	animation:
+		heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both,
+		titleShimmer 6s ease-in-out 1.2s infinite;
+}
+
+/* ===== Scroll cue fades away once you start scrolling (see hero.ts) ===== */
+.hero-scroll-cue {
+	transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero-scroll-cue.hidden-cue {
+	opacity: 0;
+	transform: translateX(-50%) translateY(8px);
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.hero-avatar-wrap::after,
 	.hero-avatar,
 	.hero-avatar-ring,
-	.hero-scroll-cue span {
+	.hero-scroll-cue span,
+	.hero-avatar-wrap::after,
+	.hero-avatar-ring {
 		animation: none;
 	}
 }

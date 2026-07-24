@@ -59,6 +59,21 @@ section[id]::before {
 	display: none;
 }
 
+/* position:sticky inside #hero breaks if any ancestor clips overflow */
+#hero {
+	overflow: visible;
+}
+
+/* the intro caption name is not a section heading — no underline bar */
+#hero .hero-intro-name {
+	display: block;
+	margin-inline: auto;
+}
+
+#hero .hero-intro-name::after {
+	display: none;
+}
+
 section[id]::after {
 	content: '';
 	position: absolute;
@@ -162,7 +177,6 @@ section[id] h2::after {
 	position: relative;
 	overflow: hidden;
 	transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
-	animation: cardFadeUp 0.65s ease both;
 	background:
 		linear-gradient(160deg, var(--surface-strong), var(--surface-soft));
 	box-shadow:
@@ -186,12 +200,40 @@ section[id] h2::after {
 	text-underline-offset: 3px;
 }
 
-#skills .grid > div:nth-child(1),
-#projects .grid > div:nth-child(1) { animation-delay: 0.05s; }
-#skills .grid > div:nth-child(2),
-#projects .grid > div:nth-child(2) { animation-delay: 0.12s; }
-#skills .grid > div:nth-child(3),
-#projects .grid > div:nth-child(3) { animation-delay: 0.2s; }
+/* ===== Scroll reveal (added via app.ts IntersectionObserver) ===== */
+.reveal {
+	opacity: 0;
+	transform: translateY(22px);
+	transition:
+		opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.reveal-in {
+	opacity: 1;
+	transform: none;
+}
+/* keep card hover transition working after reveal */
+.reveal-in {
+	transition:
+		opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+		transform 0.32s ease,
+		border-color 0.32s ease,
+		box-shadow 0.32s ease;
+}
+
+/* ===== Scroll progress bar ===== */
+#scroll-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3px;
+	width: 0;
+	z-index: 60;
+	background: linear-gradient(90deg, #60a5fa, #2dd4bf);
+	box-shadow: 0 0 12px rgba(96, 165, 250, 0.55);
+	transition: width 80ms linear;
+	pointer-events: none;
+}
 
 #skills .grid > div::after,
 #experience .space-y-8 > div::after,
@@ -302,6 +344,7 @@ section[id] h2::after {
 	#courses .space-y-4 > button {
 		animation: none;
 	}
+
 }
 
 @media (max-width: 768px) {
@@ -313,5 +356,76 @@ section[id] h2::after {
 	section[id]:not(#hero) > .container {
 		padding: 1.2rem;
 		border-radius: 1rem;
+	}
+}
+
+/* ===== Mobile: tighter spacing, no dead gaps, everything centered ===== */
+@media (max-width: 640px) {
+	section[id]:not(#hero) {
+		padding-top: 2.6rem;
+		padding-bottom: 2.6rem;
+		padding-left: 0.85rem;
+		padding-right: 0.85rem;
+	}
+
+	section[id] h2 {
+		font-size: 1.75rem;
+		margin-bottom: 2.1rem;
+	}
+
+	section[id]:not(#hero) > .container {
+		padding: 1.1rem 0.95rem;
+	}
+
+	#about .space-y-6 > p {
+		font-size: 0.97rem;
+		line-height: 1.65;
+	}
+
+	#skills .grid,
+	#projects .grid {
+		gap: 1rem;
+	}
+
+	#experience .space-y-8 > div + div {
+		margin-top: 1rem;
+	}
+
+	#about .space-y-6 > p + p {
+		margin-top: 0.9rem;
+	}
+
+	#experience .space-y-8 > div,
+	#education .container > div,
+	#projects .grid > div,
+	#skills .grid > div,
+	#courses .space-y-4 > button {
+		padding: 1.1rem 1rem;
+	}
+
+	#experience .space-y-8 > div h3,
+	#education .container > div h3,
+	#projects .grid > div h3,
+	#courses .space-y-4 > button h3 {
+		font-size: 1.15rem;
+	}
+
+	#education .container > div.mt-8 {
+		margin-top: 1rem;
+	}
+
+	#projects .grid > div p,
+	#experience .space-y-8 > div p,
+	#education .container > div p,
+	#courses .space-y-4 > button p {
+		font-size: 0.92rem;
+	}
+
+	#contact .container > * {
+		text-align: center;
+	}
+
+	.skill-bars {
+		margin-bottom: 2rem;
 	}
 }

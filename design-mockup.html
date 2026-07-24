@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasan Rahić — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFAF6;
+  --ink:#141E30;
+  --ink-soft:#4A5568;
+  --cobalt:#1D4ED8;
+  --cobalt-soft:#E4EBFB;
+  --green:#16A34A;
+  --line:#DCDFD9;
+  --grid:rgba(20,30,48,.045);
+  --card:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Public Sans',sans-serif;color:var(--ink);background:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;line-height:1.6;
+}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+
+/* NAV */
+nav{position:sticky;top:0;background:rgba(250,250,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+.logo{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;text-decoration:none;color:var(--ink)}
+.logo::before{content:"~/";color:var(--cobalt)}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;transition:color .15s}
+nav ul a:hover{color:var(--cobalt)}
+.nav-cv{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--cobalt)!important;border:1px solid var(--cobalt);padding:6px 12px;border-radius:3px}
+.nav-cv:hover{background:var(--cobalt);color:#fff!important}
+
+/* HERO */
+header{padding:80px 0 64px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.status{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:3px;margin-bottom:30px}
+.status .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{
+  font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:850;
+  font-size:clamp(54px,10.5vw,132px);line-height:.92;letter-spacing:-.025em;text-transform:uppercase;
+}
+h1 .accent{color:var(--cobalt)}
+.hero-role{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--cobalt);margin-top:20px}
+.hero-sub{display:flex;flex-wrap:wrap;gap:36px;align-items:center;margin-top:28px}
+.hero-photo{width:132px;height:132px;border-radius:6px;border:1px solid var(--line);object-fit:cover;background:var(--cobalt-soft);box-shadow:6px 6px 0 var(--cobalt-soft)}
+.hero-sub p{max-width:54ch;font-size:18px;color:var(--ink-soft)}
+.hero-sub p strong{color:var(--ink)}
+.cta-row{display:flex;gap:12px;margin-top:38px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border-radius:3px;border:1px solid var(--ink);transition:all .15s}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--cobalt);border-color:var(--cobalt);transform:translateY(-1px)}
+.btn-ghost{color:var(--ink)}
+.btn-ghost:hover{border-color:var(--cobalt);color:var(--cobalt)}
+.hero-meta{display:flex;gap:24px;margin-top:42px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);flex-wrap:wrap}
+.hero-meta a{color:var(--ink-soft);text-decoration:none}
+.hero-meta a:hover{color:var(--cobalt)}
+.hero-meta span::before{content:"▸ ";color:var(--cobalt)}
+
+/* SECTION BASE */
+section{padding:76px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--cobalt);margin-bottom:10px}
+h2{font-family:'Archivo',sans-serif;font-stretch:120%;font-weight:800;font-size:clamp(28px,4vw,42px);margin-bottom:32px;letter-spacing:-.01em}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:44px}
+.about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:16.5px}
+.facts{border:1px solid var(--line);background:var(--card);border-radius:6px;padding:26px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;align-self:start;box-shadow:6px 6px 0 var(--cobalt-soft)}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.facts div:last-child{border:none}
+.facts span:first-child{color:var(--ink-soft)}
+.facts span:last-child{font-weight:500;text-align:right}
+
+/* EXPERIENCE + EDUCATION timeline */
+.timeline{border-left:2px solid var(--line);margin-left:6px;padding-left:32px;display:flex;flex-direction:column;gap:36px}
+.t-item{position:relative}
+.t-item::before{content:"";position:absolute;left:-40px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--cobalt)}
+.t-item .when{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft)}
+.t-item h3{font-size:19px;font-weight:700;margin:4px 0 2px}
+.t-item .where{font-size:14px;color:var(--cobalt);font-weight:600}
+.t-item p{color:var(--ink-soft);font-size:15px;margin-top:6px;max-width:64ch}
+
+/* SKILLS */
+.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px;transition:transform .15s,box-shadow .15s}
+.skill-card:hover{transform:translateY(-2px);box-shadow:6px 6px 0 var(--cobalt-soft)}
+.skill-card h3{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;color:var(--cobalt);margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:13.5px;font-weight:500;padding:6px 11px;background:var(--paper);border:1px solid var(--line);border-radius:3px}
+
+/* PROJECTS */
+.proj-list{display:flex;flex-direction:column}
+.proj{display:grid;grid-template-columns:110px 1fr auto;gap:24px;padding:26px 0;border-bottom:1px dashed var(--line);align-items:start;transition:background .15s}
+.proj:hover{background:rgba(29,78,216,.03)}
+.proj:last-child{border-bottom:none}
+.proj .year{font-family:'IBM Plex Mono',monospace;color:var(--ink-soft);font-size:14px;padding-top:3px}
+.proj h3{font-size:20px;font-weight:700}
+.proj .stack{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--cobalt);margin:3px 0 6px}
+.proj p{color:var(--ink-soft);font-size:15px;max-width:62ch}
+.gh-link{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--cobalt);text-decoration:none;border:1px solid var(--line);background:var(--card);padding:8px 14px;border-radius:3px;white-space:nowrap;transition:all .15s}
+.gh-link:hover{border-color:var(--cobalt);background:var(--cobalt);color:#fff}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cert{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .15s,box-shadow .15s}
+.cert:hover{transform:translateY(-2px);box-shadow:6px 6px 0 var(--cobalt-soft)}
+.cert .badge{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--green);display:flex;align-items:center;gap:6px}
+.cert .badge::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;font-size:10px}
+.cert h3{font-size:17px;font-weight:700;line-height:1.35}
+.cert .issuer{font-size:13.5px;color:var(--ink-soft)}
+.cert .issuer strong{color:var(--cobalt)}
+.cert .cert-links{margin-top:auto;padding-top:10px;display:flex;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+.cert .cert-links a{color:var(--cobalt);text-decoration:none}
+.cert .cert-links a:hover{text-decoration:underline}
+.cert-view{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--cobalt);background:none;border:none;padding:0;cursor:pointer}
+.cert-view::before{content:"⧉ "}
+.cert-view:hover{text-decoration:underline}
+
+/* Certificate lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(20,30,48,.55);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
+.lightbox.open{display:flex;animation:fadeIn .2s var(--ease-out, ease-out)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.lightbox-card{background:var(--card);border-radius:8px;max-width:900px;width:100%;padding:20px;position:relative;animation:riseIn .3s cubic-bezier(.22,1,.36,1)}
+.lightbox-card h3{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;margin-bottom:14px;padding-right:44px}
+.lightbox-card img{width:100%;max-height:75vh;object-fit:contain;border-radius:4px}
+.lightbox-close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);border-radius:4px;font-size:18px;cursor:pointer;transition:all .15s}
+.lightbox-close:hover{border-color:var(--cobalt);color:var(--cobalt)}
+
+/* CONTACT */
+.contact-box{background:var(--ink);color:var(--paper);border-radius:8px;padding:56px 48px;text-align:center;position:relative;overflow:hidden}
+.contact-box::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.contact-box>*{position:relative}
+.contact-box .eyebrow{color:#7C9BEF}
+.contact-box h2{color:#fff}
+.contact-box p{color:#B9C2D0;max-width:50ch;margin:0 auto 30px}
+.contact-box .btn-primary{background:var(--cobalt);border-color:var(--cobalt);font-family:'IBM Plex Mono',monospace}
+.contact-box .btn-primary:hover{background:#fff;color:var(--ink);border-color:#fff}
+.contact-social{margin-top:24px;display:flex;justify-content:center;gap:22px;font-family:'IBM Plex Mono',monospace;font-size:13px}
+.contact-social a{color:#B9C2D0;text-decoration:none}
+.contact-social a:hover{color:#fff}
+
+footer{padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft)}
+
+@media(max-width:820px){
+  .about-grid,.skill-groups,.cert-grid{grid-template-columns:1fr}
+  .proj{grid-template-columns:1fr;gap:8px}
+  .proj .year{padding:0}
+  nav ul{display:none}
+}
+/* ===== MOTION SYSTEM (ui-ux-pro-max: unified duration/easing tokens) ===== */
+:root{
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-in:cubic-bezier(.4,0,1,1);
+  --dur-micro:180ms;
+  --dur-enter:600ms;
+}
+
+/* Hero load choreography — staggered fade-up */
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+header .status,header h1,header .hero-role,header .hero-sub,header .cta-row,header .hero-meta{
+  animation:riseIn var(--dur-enter) var(--ease-out) both;
+}
+header .status{animation-delay:.05s}
+header h1{animation-delay:.15s}
+header .hero-role{animation-delay:.3s}
+header .hero-sub{animation-delay:.4s}
+header .cta-row{animation-delay:.5s}
+header .hero-meta{animation-delay:.6s}
+
+/* Hero accent dot pops in last */
+@keyframes popIn{0%{opacity:0;transform:scale(0)}70%{transform:scale(1.3)}100%{opacity:1;transform:scale(1)}}
+h1 .accent{display:inline-block;animation:popIn .5s var(--ease-out) .75s both}
+
+/* Typing effect on hero role line */
+.hero-role{overflow:hidden;white-space:nowrap;border-right:2px solid var(--cobalt);width:fit-content;
+  animation:riseIn var(--dur-enter) var(--ease-out) .3s both,typing 1.6s steps(38) .45s both,caret 1s step-end 2.1s 3;}
+@keyframes typing{from{max-width:0}to{max-width:100%}}
+@keyframes caret{50%{border-color:transparent}}
+
+/* Scroll-triggered reveals (added via JS) — transform/opacity only */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity var(--dur-enter) var(--ease-out),transform var(--dur-enter) var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+
+/* Timeline dots pulse in when revealed */
+.t-item::before{transform:scale(0);transition:transform .35s var(--ease-out) .2s}
+.t-item.in::before{transform:scale(1)}
+
+/* Micro-interactions: press feedback (scale 0.97, restore on release) */
+.btn,.gh-link,.nav-cv{transition:all var(--dur-micro) var(--ease-out)}
+.btn:active,.gh-link:active{transform:scale(.97)}
+
+/* gh-link arrow slides on hover */
+.gh-link{position:relative}
+.gh-link:hover{padding-right:18px}
+
+/* Nav link underline draw */
+nav ul a{position:relative}
+nav ul a:not(.nav-cv)::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:var(--cobalt);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-micro) var(--ease-out)}
+nav ul a:not(.nav-cv):hover::after{transform:scaleX(1)}
+
+/* Tag hover */
+.tag{transition:all var(--dur-micro) var(--ease-out);cursor:default}
+.tag:hover{border-color:var(--cobalt);color:var(--cobalt);transform:translateY(-1px)}
+
+/* Photo hover — shadow shifts */
+.hero-photo{transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+.hero-photo:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--cobalt-soft)}
+
+/* Hero photo scroll effect: floating clone starts large, docks into the slot on scroll */
+.hero-photo-float{position:fixed;z-index:9;border-radius:6px;border:1px solid var(--line);object-fit:cover;box-shadow:8px 8px 0 var(--cobalt-soft);pointer-events:none;will-change:top,left,width,height;animation:riseIn .7s cubic-bezier(.22,1,.36,1) .35s both}
+.hero-photo.docking{visibility:hidden}
+
+/* Card tilt (JS-driven) */
+.tilt{transform-style:preserve-3d;will-change:transform}
+
+/* Magnetic CTA buttons */
+.btn{will-change:transform}
+
+/* Scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--cobalt);width:0;z-index:20;transition:width 80ms linear}
+
+/* Reduced motion: disable everything, content readable immediately */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .t-item::before{transform:scale(1)!important}
+  .hero-role{max-width:100%;border-right:none}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#">hasan-rahic</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a class="nav-cv" href="public/assets/Hasan-Rahić-CV-Resume.pdf" download>CV ↓</a></li>
+  </ul>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="status"><span class="dot"></span>status: available for internship & junior roles</div>
+  <h1>Hasan<br>Rahić<span class="accent">.</span></h1>
+  <p class="hero-role">// software engineer — full-stack web</p>
+  <div class="hero-sub">
+    <img class="hero-photo" src="public/assets/haso.png" alt="Hasan Rahić">
+    <p>Final-year Software Engineering student in Mostar who builds <strong>full-stack apps with Angular and .NET</strong> — from university projects and hackathon wins to certified courses, everything ends up shipped and on GitHub.</p>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="public/assets/Hasan-Rahić-CV-Resume.pdf" download>Download CV</a>
+    <a class="btn btn-ghost" href="#projects">View projects</a>
+  </div>
+  <div class="hero-meta">
+    <span><a href="https://github.com/hasanrahic" target="_blank">github.com/hasanrahic</a></span>
+    <span><a href="https://www.linkedin.com/in/hasan-rahi%C4%87-3941b2255/" target="_blank">linkedin</a></span>
+    <span><a href="mailto:hasanrahic604@gmail.com">hasanrahic604@gmail.com</a></span>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <p class="eyebrow">// about</p>
+  <h2>Built to ship, ready to learn</h2>
+  <div class="about-grid">
+    <div>
+      <p>I'm a motivated, detail-oriented final-year Software Engineering student with a passion for building useful, real-world digital products. Through university projects, hackathons and practical experience, I've learned how to turn ideas into working solutions — and how to stay focused when challenges appear.</p>
+      <p>I enjoy teamwork, clear communication and continuous learning. My goal is to join a professional environment where I can contribute with energy and responsibility from day one, while growing into an even stronger engineer.</p>
+    </div>
+    <div class="facts">
+      <div><span>base</span><span>Mostar, BiH</span></div>
+      <div><span>degree</span><span>Software Eng., 4th year</span></div>
+      <div><span>university</span><span>FIT — Džemal Bijedić</span></div>
+      <div><span>focus</span><span>Angular · .NET · React</span></div>
+      <div><span>hackathons</span><span>BEST Mostar '24 & '25</span></div>
+      <div><span>languages</span><span>BS · EN · DE</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <p class="eyebrow">// experience & education</p>
+  <h2>Path so far</h2>
+  <div class="timeline">
+    <div class="t-item">
+      <span class="when">04/2025 – 05/2025</span>
+      <h3>IT Intern</h3>
+      <span class="where">BH Telecom · Mostar</span>
+      <p>Hands-on internship in telecom and IT systems — enterprise networking, infrastructure, and troubleshooting.</p>
+    </div>
+    <div class="t-item">
+      <span class="when">01/2025 – 04/2025</span>
+      <h3>Student Job</h3>
+      <span class="where">Zapp · Mostar</span>
+      <p>Technical and operational tasks; experience in teamwork and business communication.</p>
+    </div>
+    <div class="t-item">
+      <span class="when">2022 – present</span>
+      <h3>BSc Software Engineering</h3>
+      <span class="where">Faculty of Information Technologies, University of Džemal Bijedić</span>
+      <p>Fourth-year student focused on full-stack web development.</p>
+    </div>
+    <div class="t-item">
+      <span class="when">2018 – 2022</span>
+      <h3>Information Technologies</h3>
+      <span class="where">JU Srednja Elektrotehnička Škola Mostar</span>
+      <p>High school with IT focus — solid foundation in information technology.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <p class="eyebrow">// skills</p>
+  <h2>Toolbox</h2>
+  <div class="skill-groups">
+    <div class="skill-card"><h3>languages/</h3>
+      <div class="tags"><span class="tag">JavaScript</span><span class="tag">C#</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">HTML/CSS</span><span class="tag">SQL</span></div>
+    </div>
+    <div class="skill-card"><h3>frameworks-tools/</h3>
+      <div class="tags"><span class="tag">.NET</span><span class="tag">Angular</span><span class="tag">ReactJS</span><span class="tag">Git & GitHub</span><span class="tag">Firebase</span></div>
+    </div>
+    <div class="skill-card"><h3>soft-skills/</h3>
+      <div class="tags"><span class="tag">Teamwork</span><span class="tag">Communication</span><span class="tag">Adaptability</span><span class="tag">Time management</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <p class="eyebrow">// projects — all open on GitHub</p>
+  <h2>Selected work</h2>
+  <div class="proj-list">
+    <div class="proj">
+      <span class="year">2026</span>
+      <div>
+        <h3>RSII — Gym Management System</h3>
+        <p class="stack">.NET · Flutter (desktop + mobile)</p>
+        <p>Full-stack gym platform: .NET backend, Flutter desktop app for admins and Flutter mobile app for members and trainers — memberships, check-ins, training sessions, payments, notifications and progress tracking.</p>
+      </div>
+      <a class="gh-link" href="https://github.com/HasanRahic/RSII-GymManagementSystem" target="_blank">github →</a>
+    </div>
+    <div class="proj">
+      <span class="year">2024–25</span>
+      <div>
+        <h3>CarFix eCommerce</h3>
+        <p class="stack">ASP.NET Core Web API · Angular</p>
+        <p>Full-stack web application for automotive parts and services management. University project built end-to-end.</p>
+      </div>
+      <a class="gh-link" href="https://github.com/HasanRahic/rs1-2024-25-CarFix" target="_blank">github →</a>
+    </div>
+    <div class="proj">
+      <span class="year">2025</span>
+      <div>
+        <h3>CO2ok — BEST Hackathon Mostar</h3>
+        <p class="stack">ReactJS · Firebase · .NET</p>
+        <p>Web app to reduce CO₂ emissions, built from idea to working demo within hackathon deadline.</p>
+      </div>
+      <a class="gh-link" href="https://github.com/hasanrahic/co2ok" target="_blank">github →</a>
+    </div>
+    <div class="proj">
+      <span class="year">2025</span>
+      <div>
+        <h3>Dating App — Angular + .NET</h3>
+        <p class="stack">ASP.NET Core · Angular · SignalR</p>
+        <p>Full-stack app with authentication, real-time messaging and media upload. Built through a certified Udemy course.</p>
+      </div>
+      <a class="gh-link" href="https://github.com/HasanRahic/angular-.net-course" target="_blank">github →</a>
+    </div>
+    <div class="proj">
+      <span class="year">2024</span>
+      <div>
+        <h3>VidgeAI — BEST Hackathon Mostar</h3>
+        <p class="stack">React Native · AI tools</p>
+        <p>AI-powered educational tool built under 24h with a team.</p>
+      </div>
+      <a class="gh-link" href="https://github.com/hasanrahic/vidgeai" target="_blank">github →</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+  <p class="eyebrow">// certifications</p>
+  <h2>Certified & verified</h2>
+  <div class="cert-grid">
+    <div class="cert">
+      <span class="badge">certificate earned</span>
+      <h3>Build an app with ASP.NET Core and Angular from scratch</h3>
+      <span class="issuer"><strong>Udemy</strong> · 08/2025</span>
+      <div class="cert-links">
+        <button class="cert-view" data-img="public/assets/certificates/udemy-angular-dotnet.jpg" data-title="ASP.NET Core & Angular — Udemy">view certificate</button>
+        <a href="https://github.com/HasanRahic/angular-.net-course" target="_blank">project on github →</a>
+      </div>
+    </div>
+    <div class="cert">
+      <span class="badge">certificate earned</span>
+      <h3>Flutter & Dart — The Complete Guide</h3>
+      <span class="issuer"><strong>Udemy</strong> · 04/2026</span>
+      <div class="cert-links"><button class="cert-view" data-img="public/assets/certificates/certificate-flutter.png" data-title="Flutter & Dart — Udemy">view certificate</button></div>
+    </div>
+    <div class="cert">
+      <span class="badge">certificate earned</span>
+      <h3>JavaScript</h3>
+      <span class="issuer"><strong>King Fahd Cultural Center</strong> · Mostar · 01–03/2024</span>
+      <div class="cert-links"><button class="cert-view" data-img="public/assets/certificates/javascript-kralj-fahd.jpg" data-title="JavaScript — King Fahd Cultural Center">view certificate</button></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact" style="border:none"><div class="wrap">
+  <div class="contact-box">
+    <p class="eyebrow">// contact</p>
+    <h2>Let's build something</h2>
+    <p>Open to internships and junior roles. Send an email and I'll answer the same day.</p>
+    <a class="btn btn-primary" href="mailto:hasanrahic604@gmail.com">hasanrahic604@gmail.com</a>
+    <div class="contact-social">
+      <a href="https://github.com/hasanrahic" target="_blank">github</a>
+      <a href="https://www.linkedin.com/in/hasan-rahi%C4%87-3941b2255/" target="_blank">linkedin</a>
+      <a href="public/assets/Hasan-Rahić-CV-Resume.pdf" download>cv.pdf</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Hasan Rahić</span>
+  <span>designed & built by me</span>
+</div></footer>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
+  <div class="lightbox-card">
+    <button class="lightbox-close" aria-label="Close certificate preview">✕</button>
+    <h3 id="lb-title"></h3>
+    <img id="lb-img" src="" alt="">
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tag elements for scroll reveal with 40ms stagger per sibling group
+  var groups = [
+    '#about .about-grid > *',
+    '.t-item',
+    '.skill-card',
+    '.proj',
+    '.cert',
+    '#contact .contact-box',
+    'section h2, section .eyebrow'
+  ];
+  if(!reduced){
+    groups.forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); });
+    });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          // stagger siblings that enter together (40ms apart, ui-ux-pro-max: 30-50ms)
+          var d = (e.target.dataset.stagger||0);
+          e.target.style.transitionDelay = d + 'ms';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    // assign stagger index within each parent
+    document.querySelectorAll('.reveal').forEach(function(el){
+      var i = Array.prototype.filter.call(el.parentNode.children,function(c){return c.classList.contains('reveal')}).indexOf(el);
+      el.dataset.stagger = Math.min(i,6)*40;
+      io.observe(el);
+    });
+  }
+
+  // Scroll progress bar (throttled via rAF — ui-ux-pro-max: debounce/throttle high-frequency events)
+  var bar = document.querySelector('.scroll-progress'), ticking=false;
+  window.addEventListener('scroll',function(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(function(){
+      var h = document.documentElement;
+      bar.style.width = (h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+      ticking=false;
+    });
+  },{passive:true});
+
+  // Hero photo: floating fixed clone starts BIG, docks into the small slot on scroll.
+  // Measured every frame via getBoundingClientRect, so it works at any width and
+  // survives entrance animations / resizes.
+  var slot=document.querySelector('.hero-photo');
+  var floatImg=null,RANGE=300,MIN_W=560;
+  function heroFrame(){
+    var vw=window.innerWidth;
+    if(reduced||vw<MIN_W){ if(floatImg){floatImg.remove();floatImg=null;slot.classList.remove('docking');} return; }
+    var p=Math.min(Math.max(window.scrollY/RANGE,0),1);
+    if(p>=1){ if(floatImg){floatImg.style.display='none';slot.classList.remove('docking');} return; }
+    if(!floatImg){
+      floatImg=document.createElement('img');
+      floatImg.src=slot.src; floatImg.alt=''; floatImg.setAttribute('aria-hidden','true');
+      floatImg.className='hero-photo-float';
+      document.body.appendChild(floatImg);
+    }
+    floatImg.style.display='block';
+    slot.classList.add('docking');
+    var r=slot.getBoundingClientRect();                 // small slot, viewport coords
+    var B=Math.min(340,vw*0.38);                         // big size
+    var wrapR=document.querySelector('header .wrap').getBoundingClientRect();
+    var bigX=Math.max(16,Math.min(wrapR.right-B,vw-B-16));
+    var bigY=84;                                         // just below sticky nav
+    var e=1-Math.pow(1-p,3);                             // ease-out
+    floatImg.style.left =(bigX+(r.left-bigX)*e)+'px';
+    floatImg.style.top  =(bigY+(r.top -bigY)*e)+'px';
+    floatImg.style.width=(B+(r.width-B)*e)+'px';
+    floatImg.style.height=(B+(r.height-B)*e)+'px';
+  }
+  var heroTick=false;
+  function heroSchedule(){ if(heroTick)return; heroTick=true; requestAnimationFrame(function(){heroFrame();heroTick=false;}); }
+  window.addEventListener('scroll',heroSchedule,{passive:true});
+  window.addEventListener('resize',heroSchedule);
+  heroFrame();
+  window.addEventListener('load',heroFrame);
+
+  // Card tilt on hover (skill + cert cards) — subtle 3D, pointer devices only
+  if(!reduced && window.matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.skill-card,.cert').forEach(function(card){
+      card.classList.add('tilt');
+      card.addEventListener('mousemove',function(ev){
+        var r=card.getBoundingClientRect();
+        var rx=((ev.clientY-r.top)/r.height-.5)*-6;   // max 3deg
+        var ry=((ev.clientX-r.left)/r.width-.5)*6;
+        card.style.transform='perspective(700px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-2px)';
+      });
+      card.addEventListener('mouseleave',function(){card.style.transform='';});
+    });
+
+    // Magnetic CTA buttons — pull gently toward the cursor
+    document.querySelectorAll('.btn').forEach(function(btn){
+      btn.addEventListener('mousemove',function(ev){
+        var r=btn.getBoundingClientRect();
+        var mx=(ev.clientX-r.left-r.width/2)*.18;
+        var my=(ev.clientY-r.top-r.height/2)*.3;
+        btn.style.transform='translate('+mx+'px,'+my+'px)';
+      });
+      btn.addEventListener('mouseleave',function(){btn.style.transform='';});
+    });
+  }
+
+  // Certificate lightbox (esc + backdrop close, focus management)
+  var lb=document.getElementById('lightbox'),lbImg=document.getElementById('lb-img'),lbTitle=document.getElementById('lb-title'),lastFocus=null;
+  document.querySelectorAll('.cert-view').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      lastFocus=btn;
+      lbImg.src=btn.dataset.img;
+      lbImg.alt=btn.dataset.title+' certificate';
+      lbTitle.textContent=btn.dataset.title;
+      lb.classList.add('open');
+      lb.querySelector('.lightbox-close').focus();
+      document.body.style.overflow='hidden';
+    });
+  });
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+  lb.querySelector('.lightbox-close').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))closeLb();});
+})();
+</script>
+</body>
+</html>

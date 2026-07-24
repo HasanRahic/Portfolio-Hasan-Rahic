@@ -31,7 +31,28 @@ export class Projects {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.observeAnimations();
+      this.setupTilt();
     }
+  }
+
+  /** 3D tilt: project cards lean toward the cursor (pointer devices only). */
+  private setupTilt() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    setTimeout(() => {
+      document.querySelectorAll<HTMLElement>('#projects .grid > div').forEach((card) => {
+        card.addEventListener('mousemove', (ev: MouseEvent) => {
+          const r = card.getBoundingClientRect();
+          const rx = ((ev.clientY - r.top) / r.height - 0.5) * -6;
+          const ry = ((ev.clientX - r.left) / r.width - 0.5) * 6;
+          card.style.transform =
+            `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }, 0);
   }
 
   private observeAnimations() {
